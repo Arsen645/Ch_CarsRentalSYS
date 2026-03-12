@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 
 namespace CarsRentalSYS
@@ -17,51 +19,72 @@ namespace CarsRentalSYS
         String name;
         String description;
         int monthlyRate; 
+        int carclassId;
+            CarType carType;
         public setCarType()
         {
             InitializeComponent();
         }
 
-        public static int GetNextProdID()
+        private void FormAddProductLoad(object sender, EventArgs e)
 
         {
 
+            //Get the next Product ID
 
-            //Define the SQL query to be executed - only one value returned here
+            //Create car class
 
-            string sqlQuery = "SELECT MAX(CLASSID) FROM CarClass";
-
-
-            //Execute the SQL query
-
-            OracleDataReader dr = Database.ExecuteSingleRowQuery(sqlQuery);
+            carclassId = CarType.GetNextCarTypeID();//.ToString("0000");
 
 
-            //Does data reader contain a value or is it null?
-
-            int nextId;
+            //Load TypeCodes into ComboBox
 
 
-            dr.Read();
-
-
-            if (dr.IsDBNull(0)) //the data reader is empty so no rows have yet been added to the table
-
-                nextId = 1;
-
-            else
-
-                nextId = dr.GetInt32(0) + 1;
-
-
-            //close the OracleDataReader and the DB connection
-
-            dr.Close();
-
-
-            return nextId;
 
         }
+
+        //public static int GetNextProdID()
+
+        //{
+
+
+        //    //Define the SQL query to be executed - only one value returned here
+
+        //    string sqlQuery = "SELECT MAX(CLASSID) FROM CarClass";
+
+
+        //    //Execute the SQL query
+
+        //    OracleDataReader dr = Database.ExecuteSingleRowQuery(sqlQuery);
+
+
+        //    //Does data reader contain a value or is it null?
+
+        //    int nextId;
+
+
+        //    dr.Read();
+
+
+        //    if (dr.IsDBNull(0)) //the data reader is empty so no rows have yet been added to the table
+
+        //        nextId = 1;
+
+        //    else
+
+        //        nextId = dr.GetInt32(0) + 1;
+
+
+        //    //close the OracleDataReader and the DB connection
+
+        //    dr.Close();
+
+
+        //    return nextId;
+
+        //}
+
+        
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -82,10 +105,6 @@ namespace CarsRentalSYS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            name = txtClassName.Text;
-            description = txtClassDescription.Text;
-            monthlyRate = Convert.ToInt32(txtMonthlyRate.Text);
-
             if (txtClassName.Text.Any(char.IsDigit))
             {
                 MessageBox.Show("Class name must not contain numbers");
@@ -96,24 +115,35 @@ namespace CarsRentalSYS
             if (txtClassDescription.Text.Any(char.IsDigit))
             {
                 MessageBox.Show("Class description must not contain numbers");
-                txtClassName.Focus();
+                txtClassDescription.Focus();
                 return;
             }
 
-            if (!txtMonthlyRate.Text.Any(char.IsDigit))
+            int monthlyRate;
+
+            if (!int.TryParse(txtMonthlyRate.Text, out monthlyRate))
             {
                 MessageBox.Show("Monthly rate must contain only numbers");
-                txtClassName.Focus();
+                txtMonthlyRate.Focus();
                 return;
-
-                
             }
 
-            MessageBox.Show("Car type saved");
-            txtClassName.Text = "";
-            txtClassDescription.Text = "";
-            txtMonthlyRate.Text = "";
+            CarType aCarType = new CarType(carclassId, txtClassName.Text, txtClassDescription.Text, Convert.ToInt32(txtMonthlyRate.Text));
+                //,
+    //txtClassName.Text,
+    //txtClassDescription.Text,
+    //Convert.ToDecimal(txtMonthlyRate.Text),
+
+            aCarType.AddCarType();
+
+            MessageBox.Show("Car type saved successfully");
+
+            txtClassName.Clear();
+            txtClassDescription.Clear();
+            txtMonthlyRate.Clear();
         }
+
+       
 
         private void txtClassName_TextChanged(object sender, EventArgs e)
         {

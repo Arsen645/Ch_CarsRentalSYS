@@ -107,6 +107,7 @@
     <Compile Include="changeReservation.Designer.cs">
       <DependentUpon>changeReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
