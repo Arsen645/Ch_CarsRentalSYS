@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -35,11 +36,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.txtClass = new System.Windows.Forms.TextBox();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.carClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setCarTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,13 +63,15 @@
             this.repairCostAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtPlateNo = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 50);
+            this.label1.Location = new System.Drawing.Point(23, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
@@ -122,45 +125,45 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 50);
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 20);
-            this.textBox1.TabIndex = 6;
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 14;
             // 
-            // textBox2
+            // txtBrand
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(154, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtBrand.Location = new System.Drawing.Point(80, 84);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(154, 20);
+            this.txtBrand.TabIndex = 7;
             // 
-            // textBox3
+            // txtModel
             // 
-            this.textBox3.Location = new System.Drawing.Point(80, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(154, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtModel.Location = new System.Drawing.Point(80, 119);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(154, 20);
+            this.txtModel.TabIndex = 8;
             // 
-            // textBox4
+            // txtYear
             // 
-            this.textBox4.Location = new System.Drawing.Point(80, 152);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(154, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtYear.Location = new System.Drawing.Point(80, 152);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(154, 20);
+            this.txtYear.TabIndex = 9;
             // 
-            // textBox5
+            // txtStatus
             // 
-            this.textBox5.Location = new System.Drawing.Point(80, 178);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(154, 20);
-            this.textBox5.TabIndex = 10;
+            this.txtStatus.Location = new System.Drawing.Point(80, 178);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(154, 20);
+            this.txtStatus.TabIndex = 10;
             // 
-            // textBox6
+            // txtClass
             // 
-            this.textBox6.Location = new System.Drawing.Point(80, 201);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(154, 20);
-            this.textBox6.TabIndex = 11;
+            this.txtClass.Location = new System.Drawing.Point(80, 201);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(154, 20);
+            this.txtClass.TabIndex = 11;
             // 
             // menuStrip2
             // 
@@ -327,18 +330,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtPlateNo
+            // 
+            this.txtPlateNo.Location = new System.Drawing.Point(83, 56);
+            this.txtPlateNo.Name = "txtPlateNo";
+            this.txtPlateNo.Size = new System.Drawing.Size(160, 20);
+            this.txtPlateNo.TabIndex = 15;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // addCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtPlateNo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtClass);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.txtModel);
+            this.Controls.Add(this.txtBrand);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -364,11 +380,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBrand;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem carClassesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setCarTypeToolStripMenuItem;
@@ -391,5 +407,7 @@
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtPlateNo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
