@@ -31,8 +31,47 @@ namespace CarsRentalSYS
             this.Close();
         }
 
+        private void LoadCarClasses() //https://stackoverflow.com/questions
+        {
+            try
+            {
+                OracleConnection conn = Database.OpenConnection();
+
+                string query = "SELECT ClassID, ClassName FROM CarClass";
+
+                OracleDataAdapter da = new OracleDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cmbCarClass.DataSource = dt;
+                cmbCarClass.DisplayMember = "ClassName"; // shown to user
+                cmbCarClass.ValueMember = "ClassID";     // actual ID
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading car classes: " + ex.Message);
+            }
+        }
+
+        private void addCar_Load(object sender, EventArgs e)
+        {
+            LoadCarClasses();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            if (txtYear.Text.Length != 4 || !int.TryParse(txtYear.Text, out _))
+            {
+                MessageBox.Show("Please enter a valid 4-digit year.");
+                return;
+            }
+            if(!int.TryParse(txtPlateNo.Text, out _) || txtPlateNo.Text.Length < 1 || txtPlateNo.Text.Length > 8 || 
+                txtPlateReg.Text.Length > 2 || txtPlateYear.Text.Length != 2 )
+            {
+                MessageBox.Show("Please enter a valid plate number.");
+                return;
+            }
+            String plateNo = txtPlateYear.Text + "-" + txtPlateReg.Text + "-" + txtPlateNo.Text;
             try { 
                 OracleConnection conn = Database.OpenConnection();
             
@@ -41,12 +80,12 @@ namespace CarsRentalSYS
 
                 OracleCommand cmd = new OracleCommand(query, conn);
 
-                cmd.Parameters.Add(":PlateNo", txtPlateNo.Text);
+                cmd.Parameters.Add(":PlateNo", plateNo);
                 cmd.Parameters.Add(":Brand", txtBrand.Text);
                 cmd.Parameters.Add(":Model", txtModel.Text);
                 cmd.Parameters.Add(":Year", int.Parse(txtYear.Text));
-                cmd.Parameters.Add(":Status", txtStatus.Text);
-                cmd.Parameters.Add(":CarClassID", int.Parse(txtClass.Text));
+                cmd.Parameters.Add(":Status", "A");
+                cmd.Parameters.Add(":CarClassID", Convert.ToInt32(cmbCarClass.SelectedValue));
 
                     cmd.ExecuteNonQuery();
                 

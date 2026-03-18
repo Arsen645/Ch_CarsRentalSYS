@@ -82,7 +82,6 @@
             // 
             this.setCarTypeToolStripMenuItem.Name = "setCarTypeToolStripMenuItem";
             this.setCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.setCarTypeToolStripMenuItem.Text = "Set Car Type";
             // 
             // changeCarTypeToolStripMenuItem
             // 
@@ -132,6 +131,7 @@
             this.makeAReservationToolStripMenuItem.Name = "makeAReservationToolStripMenuItem";
             this.makeAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.makeAReservationToolStripMenuItem.Text = "Make a reservation";
+            this.makeAReservationToolStripMenuItem.Click += new System.EventHandler(this.makeAReservationToolStripMenuItem_Click);
             // 
             // cancelAReservationToolStripMenuItem
             // 

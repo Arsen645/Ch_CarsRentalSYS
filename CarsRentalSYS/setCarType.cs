@@ -24,77 +24,38 @@ namespace CarsRentalSYS
         public setCarType()
         {
             InitializeComponent();
+                generateCarClassId();
         }
 
-        private void FormAddProductLoad(object sender, EventArgs e)
-
+        private void generateCarClassId()
         {
-
-            //Get the next Product ID
-
-            //Create car class
-
-            carclassId = CarType.GetNextCarTypeID();//.ToString("0000");
-
-
-            //Load TypeCodes into ComboBox
-
-
-
+            try
+            {
+                OracleConnection conn = Database.OpenConnection();
+                string query = "SELECT MAX(ClassID) FROM CarClass";
+                OracleCommand cmd = new OracleCommand(query, conn);
+                object result = cmd.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    carclassId = Convert.ToInt32(result) + 1;
+                }
+                else
+                {
+                    carclassId = 1; // Start from 1 if no records exist
+                }
+                txtCarClassId.Text = carclassId.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generating Car Class ID: " + ex.Message);
+            }
         }
 
-        //public static int GetNextProdID()
-
-        //{
 
 
-        //    //Define the SQL query to be executed - only one value returned here
-
-        //    string sqlQuery = "SELECT MAX(CLASSID) FROM CarClass";
 
 
-        //    //Execute the SQL query
 
-        //    OracleDataReader dr = Database.ExecuteSingleRowQuery(sqlQuery);
-
-
-        //    //Does data reader contain a value or is it null?
-
-        //    int nextId;
-
-
-        //    dr.Read();
-
-
-        //    if (dr.IsDBNull(0)) //the data reader is empty so no rows have yet been added to the table
-
-        //        nextId = 1;
-
-        //    else
-
-        //        nextId = dr.GetInt32(0) + 1;
-
-
-        //    //close the OracleDataReader and the DB connection
-
-        //    dr.Close();
-
-
-        //    return nextId;
-
-        //}
-
-        
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -129,10 +90,7 @@ namespace CarsRentalSYS
             }
 
             CarType aCarType = new CarType(carclassId, txtClassName.Text, txtClassDescription.Text, Convert.ToInt32(txtMonthlyRate.Text));
-                //,
-    //txtClassName.Text,
-    //txtClassDescription.Text,
-    //Convert.ToDecimal(txtMonthlyRate.Text),
+                
 
             aCarType.AddCarType();
 
@@ -145,22 +103,9 @@ namespace CarsRentalSYS
 
        
 
-        private void txtClassName_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+        
 
-        private void txtClassDescription_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void _TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtMonthlyRate_TextChanged(object sender, EventArgs e)
+        private void txtCarClassId_TextChanged(object sender, EventArgs e)
         {
 
         }

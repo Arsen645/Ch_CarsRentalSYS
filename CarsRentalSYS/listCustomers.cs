@@ -23,5 +23,21 @@ namespace CarsRentalSYS
             menu.Show();
             this.Close();
         }
+        private void showCustomersRateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showCustomerRates f1 = new showCustomerRates();
+            f1.Show();
+            this.Hide();
+        }
+
+        private void makeAReservationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            makeReservation f1 = new makeReservation();
+            f1.Show();
+            this.Hide();
+        }
+
+
+
     }
 }

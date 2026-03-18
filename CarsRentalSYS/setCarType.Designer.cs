@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtClassName = new System.Windows.Forms.TextBox();
-            this.txtClassDescription = new System.Windows.Forms.TextBox();
-            this.txtMonthlyRate = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblClassName = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblMonthlyRate = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.carClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,59 +40,40 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtCarClassId = new System.Windows.Forms.TextBox();
+            this.txtClassName = new System.Windows.Forms.TextBox();
+            this.txtClassDescription = new System.Windows.Forms.TextBox();
+            this.txtMonthlyRate = new System.Windows.Forms.TextBox();
+            this.lblCarClassId = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtClassName
+            // lblClassName
             // 
-            this.txtClassName.Location = new System.Drawing.Point(87, 63);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(132, 20);
-            this.txtClassName.TabIndex = 2;
-            this.txtClassName.TextChanged += new System.EventHandler(this.txtClassName_TextChanged);
+            this.lblClassName.AutoSize = true;
+            this.lblClassName.Location = new System.Drawing.Point(12, 63);
+            this.lblClassName.Name = "lblClassName";
+            this.lblClassName.Size = new System.Drawing.Size(63, 13);
+            this.lblClassName.TabIndex = 5;
+            this.lblClassName.Text = "Class Name";
             // 
-            // txtClassDescription
+            // lblDescription
             // 
-            this.txtClassDescription.Location = new System.Drawing.Point(87, 103);
-            this.txtClassDescription.Name = "txtClassDescription";
-            this.txtClassDescription.Size = new System.Drawing.Size(249, 20);
-            this.txtClassDescription.TabIndex = 3;
-            this.txtClassDescription.TextChanged += new System.EventHandler(this.txtClassDescription_TextChanged);
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(7, 103);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.TabIndex = 6;
+            this.lblDescription.Text = "Description";
             // 
-            // txtMonthlyRate
+            // lblMonthlyRate
             // 
-            this.txtMonthlyRate.Location = new System.Drawing.Point(87, 142);
-            this.txtMonthlyRate.Name = "txtMonthlyRate";
-            this.txtMonthlyRate.Size = new System.Drawing.Size(124, 20);
-            this.txtMonthlyRate.TabIndex = 4;
-            this.txtMonthlyRate.TextChanged += new System.EventHandler(this.txtMonthlyRate_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Class Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Description";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Monthly Rate";
+            this.lblMonthlyRate.AutoSize = true;
+            this.lblMonthlyRate.Location = new System.Drawing.Point(7, 145);
+            this.lblMonthlyRate.Name = "lblMonthlyRate";
+            this.lblMonthlyRate.Size = new System.Drawing.Size(70, 13);
+            this.lblMonthlyRate.TabIndex = 7;
+            this.lblMonthlyRate.Text = "Monthly Rate";
             // 
             // menuStrip2
             // 
@@ -168,20 +146,61 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "€";
             // 
+            // txtCarClassId
+            // 
+            this.txtCarClassId.Location = new System.Drawing.Point(96, 41);
+            this.txtCarClassId.Name = "txtCarClassId";
+            this.txtCarClassId.ReadOnly = true;
+            this.txtCarClassId.Size = new System.Drawing.Size(114, 20);
+            this.txtCarClassId.TabIndex = 11;
+            this.txtCarClassId.TextChanged += new System.EventHandler(this.txtCarClassId_TextChanged);
+            // 
+            // txtClassName
+            // 
+            this.txtClassName.Location = new System.Drawing.Point(102, 67);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(115, 20);
+            this.txtClassName.TabIndex = 15;
+            // 
+            // txtClassDescription
+            // 
+            this.txtClassDescription.Location = new System.Drawing.Point(102, 100);
+            this.txtClassDescription.Name = "txtClassDescription";
+            this.txtClassDescription.Size = new System.Drawing.Size(115, 20);
+            this.txtClassDescription.TabIndex = 16;
+            // 
+            // txtMonthlyRate
+            // 
+            this.txtMonthlyRate.Location = new System.Drawing.Point(96, 142);
+            this.txtMonthlyRate.Name = "txtMonthlyRate";
+            this.txtMonthlyRate.Size = new System.Drawing.Size(115, 20);
+            this.txtMonthlyRate.TabIndex = 17;
+            // 
+            // lblCarClassId
+            // 
+            this.lblCarClassId.AutoSize = true;
+            this.lblCarClassId.Location = new System.Drawing.Point(12, 41);
+            this.lblCarClassId.Name = "lblCarClassId";
+            this.lblCarClassId.Size = new System.Drawing.Size(44, 13);
+            this.lblCarClassId.TabIndex = 18;
+            this.lblCarClassId.Text = "Class Id";
+            // 
             // setCarType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.menuStrip2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCarClassId);
             this.Controls.Add(this.txtMonthlyRate);
             this.Controls.Add(this.txtClassDescription);
             this.Controls.Add(this.txtClassName);
+            this.Controls.Add(this.txtCarClassId);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.lblMonthlyRate);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.lblClassName);
             this.Name = "setCarType";
             this.Text = "setCarType";
             this.menuStrip2.ResumeLayout(false);
@@ -192,12 +211,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtClassName;
-        private System.Windows.Forms.TextBox txtClassDescription;
-        private System.Windows.Forms.TextBox txtMonthlyRate;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblClassName;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Label lblMonthlyRate;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem carClassesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
@@ -207,5 +223,10 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCarClassId;
+        private System.Windows.Forms.TextBox txtClassName;
+        private System.Windows.Forms.TextBox txtClassDescription;
+        private System.Windows.Forms.TextBox txtMonthlyRate;
+        private System.Windows.Forms.Label lblCarClassId;
     }
 }
