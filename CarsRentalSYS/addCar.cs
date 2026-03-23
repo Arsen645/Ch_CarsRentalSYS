@@ -31,7 +31,7 @@ namespace CarsRentalSYS
             this.Close();
         }
 
-        private void LoadCarClasses() //https://stackoverflow.com/questions
+        private void LoadCarClasses() //https://stackoverflow.com/questions //show carclasses in combo box
         {
             try
             {
@@ -90,7 +90,15 @@ namespace CarsRentalSYS
                     cmd.ExecuteNonQuery();
                 
                     MessageBox.Show("Car saved successfully");
-                }
+                txtBrand.Clear();
+                txtModel.Clear();
+                txtYear.Clear();
+                txtPlateNo.Clear();
+                txtPlateReg.Clear();
+                txtPlateYear.Clear();
+                
+
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error one: " + ex.Message);

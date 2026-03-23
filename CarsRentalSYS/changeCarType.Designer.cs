@@ -53,11 +53,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtCarClassId = new System.Windows.Forms.TextBox();
+            this.txtClassName = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtMonthlyRate = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -253,54 +253,54 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Monthly Rate";
             // 
-            // textBox1
+            // txtCarClassId
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtCarClassId.Location = new System.Drawing.Point(117, 58);
+            this.txtCarClassId.Name = "txtCarClassId";
+            this.txtCarClassId.Size = new System.Drawing.Size(127, 20);
+            this.txtCarClassId.TabIndex = 9;
             // 
-            // textBox2
+            // txtClassName
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 94);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtClassName.Location = new System.Drawing.Point(117, 94);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(127, 20);
+            this.txtClassName.TabIndex = 10;
             // 
-            // textBox3
+            // txtDescription
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(300, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtDescription.Location = new System.Drawing.Point(117, 130);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(300, 20);
+            this.txtDescription.TabIndex = 11;
             // 
-            // textBox4
+            // txtMonthlyRate
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 178);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(127, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtMonthlyRate.Location = new System.Drawing.Point(117, 178);
+            this.txtMonthlyRate.Name = "txtMonthlyRate";
+            this.txtMonthlyRate.Size = new System.Drawing.Size(127, 20);
+            this.txtMonthlyRate.TabIndex = 12;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(241, 255);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 25);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSave.Location = new System.Drawing.Point(241, 255);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(91, 25);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // changeCarType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtMonthlyRate);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.txtClassName);
+            this.Controls.Add(this.txtCarClassId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -342,10 +342,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtCarClassId;
+        private System.Windows.Forms.TextBox txtClassName;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtMonthlyRate;
+        private System.Windows.Forms.Button btnSave;
     }
 }

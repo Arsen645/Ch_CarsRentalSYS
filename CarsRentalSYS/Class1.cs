@@ -12,7 +12,7 @@ namespace CarsRentalSYS
         public int CarTypeID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int MonthlyRate { get; set; }
+        public double MonthlyRate { get; set; }
 
         public CarType() { 
         
