@@ -18,6 +18,10 @@ namespace CarsRentalSYS
         {
             InitializeComponent();
         }
+        String name;
+        String description;
+        double monthlyRate;
+        int carclassId;
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -40,10 +44,10 @@ namespace CarsRentalSYS
                 return;
             }
 
-            if (txtClassDescription.Text.Any(char.IsDigit))
+            if (txtDescription.Text.Any(char.IsDigit))
             {
                 MessageBox.Show("Class description must not contain numbers");
-                txtClassDescription.Focus();
+                txtDescription.Focus();
                 return;
             }
 
@@ -56,7 +60,7 @@ namespace CarsRentalSYS
             }
             carclassId = int.Parse(txtCarClassId.Text);
             name = txtClassName.Text;
-            description = txtClassDescription.Text;
+            description = txtDescription.Text;
             monthlyRate = double.Parse(txtMonthlyRate.Text);
             //carType = new CarType(carclassId, name, description, monthlyRate);
 
@@ -65,8 +69,8 @@ namespace CarsRentalSYS
             {
                 OracleConnection conn = Database.OpenConnection();
 
-                string query = "INSERT INTO carclass (CLASSID, CLASSNAME, DESCRIPTION, MONTHLYRATE) " +
-                               "VALUES (:carclassId, :name, :description, :monthlyRate)";
+                string query = "UPDATE carclass SET CLASSNAME = :name, DESCRIPTION = :description, MONTHLYRATE = :monthlyRate" +
+                                "WHERE CLASSID = :carclassId";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
 
@@ -80,9 +84,19 @@ namespace CarsRentalSYS
                 MessageBox.Show("Car class saved successfully");
                 //txtCarClassId.Clear();
                 txtClassName.Clear();
-                txtClassDescription.Clear();
+                txtDescription.Clear();
                 txtMonthlyRate.Clear();
                 MessageBox.Show("Saved");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cmbCarClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

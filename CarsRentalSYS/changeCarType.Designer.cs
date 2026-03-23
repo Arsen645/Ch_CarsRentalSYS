@@ -58,6 +58,7 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtMonthlyRate = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cmbCarClass = new System.Windows.Forms.ComboBox();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -257,6 +258,7 @@
             // 
             this.txtCarClassId.Location = new System.Drawing.Point(117, 58);
             this.txtCarClassId.Name = "txtCarClassId";
+            this.txtCarClassId.ReadOnly = true;
             this.txtCarClassId.Size = new System.Drawing.Size(127, 20);
             this.txtCarClassId.TabIndex = 9;
             // 
@@ -291,11 +293,21 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cmbCarClass
+            // 
+            this.cmbCarClass.FormattingEnabled = true;
+            this.cmbCarClass.Location = new System.Drawing.Point(331, 100);
+            this.cmbCarClass.Name = "cmbCarClass";
+            this.cmbCarClass.Size = new System.Drawing.Size(249, 21);
+            this.cmbCarClass.TabIndex = 14;
+            this.cmbCarClass.SelectedIndexChanged += new System.EventHandler(this.cmbCarClass_SelectedIndexChanged);
+            // 
             // changeCarType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbCarClass);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtMonthlyRate);
             this.Controls.Add(this.txtDescription);
@@ -347,5 +359,6 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtMonthlyRate;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cmbCarClass;
     }
 }
