@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,10 +19,42 @@ namespace CarsRentalSYS
         {
             InitializeComponent();
         }
+
+        //try {
+        //    OracleConnection conn = Database.OpenConnection();
+        //cmbCarClass.DisplayMember = "ClassName";
+        //cmbCarClass.ValueMember = "ClassId";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message);
+        //    }
         String name;
         String description;
         double monthlyRate;
         int carclassId;
+
+        private void changeCarType_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                OracleConnection conn = Database.OpenConnection();
+
+                string query = "SELECT * FROM carclass";
+                OracleDataAdapter da = new OracleDataAdapter(query, conn);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cmbCarClass.DataSource = dt;
+                cmbCarClass.DisplayMember = "CLASSNAME";
+                //cmbCarClass.ValueMember = "CLASSID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Load Error: " + ex.Message);
+            }
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -69,7 +102,7 @@ namespace CarsRentalSYS
             {
                 OracleConnection conn = Database.OpenConnection();
 
-                string query = "UPDATE carclass SET CLASSNAME = :name, DESCRIPTION = :description, MONTHLYRATE = :monthlyRate" +
+                string query = "UPDATE carclass SET CLASSNAME = :name, DESCRIPTION = :description, MONTHLYRATE = :monthlyRate " +
                                 "WHERE CLASSID = :carclassId";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
@@ -78,8 +111,9 @@ namespace CarsRentalSYS
                 cmd.Parameters.Add(":name", name);
                 cmd.Parameters.Add(":description", description);
                 cmd.Parameters.Add(":monthlyRate", monthlyRate);
-
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
 
                 MessageBox.Show("Car class saved successfully");
                 //txtCarClassId.Clear();
@@ -94,7 +128,19 @@ namespace CarsRentalSYS
             }
         }
 
+
         private void cmbCarClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCarClass.SelectedItem is DataRowView row)
+            {
+                txtCarClassId.Text = row["CLASSID"].ToString();
+                txtClassName.Text = row["CLASSNAME"].ToString();
+                txtDescription.Text = row["DESCRIPTION"].ToString();
+                txtMonthlyRate.Text = row["MONTHLYRATE"].ToString();
+            }
+        }
+
+        private void txtCarClassId_TextChanged(object sender, EventArgs e)
         {
 
         }

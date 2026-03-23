@@ -261,6 +261,7 @@
             this.txtCarClassId.ReadOnly = true;
             this.txtCarClassId.Size = new System.Drawing.Size(127, 20);
             this.txtCarClassId.TabIndex = 9;
+            this.txtCarClassId.TextChanged += new System.EventHandler(this.txtCarClassId_TextChanged);
             // 
             // txtClassName
             // 
@@ -320,6 +321,7 @@
             this.Controls.Add(this.menuStrip2);
             this.Name = "changeCarType";
             this.Text = "changeCarType";
+            this.Load += new System.EventHandler(this.changeCarType_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
