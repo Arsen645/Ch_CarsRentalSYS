@@ -125,5 +125,12 @@ namespace CarsRentalSYS
             f1.Show();
             this.Hide();
         }
+
+        private void btnViewCars_Click(object sender, EventArgs e)
+        {
+            ListCars f1 = new ListCars();
+            f1.Show();
+            this.Hide();
+        }
     }
 }

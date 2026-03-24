@@ -95,6 +95,7 @@
     <Compile Include="cancelReservation.Designer.cs">
       <DependentUpon>cancelReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cars1.cs" />
     <Compile Include="changeCarType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +127,12 @@
     </Compile>
     <Compile Include="generatyAnalysis.Designer.cs">
       <DependentUpon>generatyAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListCars.Designer.cs">
+      <DependentUpon>ListCars.cs</DependentUpon>
     </Compile>
     <Compile Include="listCustomers.cs">
       <SubType>Form</SubType>
@@ -197,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="generatyAnalysis.resx">
       <DependentUpon>generatyAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListCars.resx">
+      <DependentUpon>ListCars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="listCustomers.resx">
       <DependentUpon>listCustomers.cs</DependentUpon>
