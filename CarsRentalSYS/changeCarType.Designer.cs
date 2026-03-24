@@ -269,6 +269,7 @@
             this.txtClassName.Name = "txtClassName";
             this.txtClassName.Size = new System.Drawing.Size(127, 20);
             this.txtClassName.TabIndex = 10;
+            this.txtClassName.TextChanged += new System.EventHandler(this.txtClassName_TextChanged);
             // 
             // txtDescription
             // 

@@ -36,10 +36,11 @@ namespace CarsRentalSYS
 
         private void changeCarType_Load(object sender, EventArgs e)
         {
+
             try
             {
                 OracleConnection conn = Database.OpenConnection();
-
+                
                 string query = "SELECT * FROM carclass";
                 OracleDataAdapter da = new OracleDataAdapter(query, conn);
 
@@ -47,8 +48,9 @@ namespace CarsRentalSYS
                 da.Fill(dt);
 
                 cmbCarClass.DataSource = dt;
+                
                 cmbCarClass.DisplayMember = "CLASSNAME";
-                //cmbCarClass.ValueMember = "CLASSID";
+                cmbCarClass.ValueMember = "CLASSID";
             }
             catch (Exception ex)
             {
@@ -91,8 +93,7 @@ namespace CarsRentalSYS
                 txtMonthlyRate.Focus();
                 return;
             }
-            carclassId = int.Parse(txtCarClassId.Text);
-            name = txtClassName.Text;
+            carclassId = carclassId = Convert.ToInt32(cmbCarClass.SelectedValue);
             description = txtDescription.Text;
             monthlyRate = double.Parse(txtMonthlyRate.Text);
             //carType = new CarType(carclassId, name, description, monthlyRate);
@@ -107,20 +108,24 @@ namespace CarsRentalSYS
 
                 OracleCommand cmd = new OracleCommand(query, conn);
 
-                cmd.Parameters.Add(":carclassId", carclassId);
-                cmd.Parameters.Add(":name", name);
-                cmd.Parameters.Add(":description", description);
+                cmd.BindByName = true;
+
+                cmd.Parameters.Add(":name", OracleDbType.Varchar2)
+              .Value = cmbCarClass.Text;
+                cmd.Parameters.Add(":description",description);
                 cmd.Parameters.Add(":monthlyRate", monthlyRate);
-                conn.Open();
+                cmd.Parameters.Add(":carclassId", carclassId);
+                //conn.Open();
                 cmd.ExecuteNonQuery();
+                //int rows = cmd.ExecuteNonQuery();
                 conn.Close();
 
-                MessageBox.Show("Car class saved successfully");
+                MessageBox.Show("Car class updated successfully");
                 //txtCarClassId.Clear();
                 txtClassName.Clear();
                 txtDescription.Clear();
                 txtMonthlyRate.Clear();
-                MessageBox.Show("Saved");
+                changeCarType_Load(sender, e); // Refresh the combo box to show updated data
             }
             catch (Exception ex)
             {
@@ -134,13 +139,17 @@ namespace CarsRentalSYS
             if (cmbCarClass.SelectedItem is DataRowView row)
             {
                 txtCarClassId.Text = row["CLASSID"].ToString();
-                txtClassName.Text = row["CLASSNAME"].ToString();
                 txtDescription.Text = row["DESCRIPTION"].ToString();
                 txtMonthlyRate.Text = row["MONTHLYRATE"].ToString();
             }
         }
 
         private void txtCarClassId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtClassName_TextChanged(object sender, EventArgs e)
         {
 
         }
