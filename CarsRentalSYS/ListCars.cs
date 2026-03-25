@@ -25,5 +25,16 @@ namespace CarsRentalSYS
 
             grdCars.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 menu = new Form1();
+            menu.Show();
+            this.Close();
+        }
+        private void grdStock_CellClick(object sender, DataGridViewCellEventArgs e) { 
+            object carPlate = grdCars.Rows[grdCars.CurrentCell.RowIndex].Cells[0].Value;
+            MessageBox.Show("You have selected car with plate number: " + carPlate);
+        }
     }
 }
