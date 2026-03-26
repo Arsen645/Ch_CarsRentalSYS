@@ -18,6 +18,8 @@ namespace CarsRentalSYS
         }
         private void ListCars_Load(object sender, EventArgs e)
         {
+            grdCars.MultiSelect = true;
+            grdCars.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdCars.DataSource = Cars.GetAllProducts().Tables[0];
             grdCars.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
@@ -32,9 +34,27 @@ namespace CarsRentalSYS
             menu.Show();
             this.Close();
         }
-        private void grdStock_CellClick(object sender, DataGridViewCellEventArgs e) { 
-            object carPlate = grdCars.Rows[grdCars.CurrentCell.RowIndex].Cells[0].Value;
-            MessageBox.Show("You have selected car with plate number: " + carPlate);
+        private void grdCars_CellClick(object sender, DataGridViewCellEventArgs e) { 
+            //object carPlate = grdCars.Rows[grdCars.CurrentCell.RowIndex].Cells[0].Value;
+            List<string> selectedCarPlates = new List<string>();
+
+            foreach (DataGridViewRow row in grdCars.SelectedRows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    selectedCarPlates.Add(row.Cells[0].Value.ToString());
+                }
+            }
+
+            if (selectedCarPlates.Count == 0)
+            {
+                MessageBox.Show("Please select at least one car.");
+                return;
+            }
+
+            // Process rental
+            MessageBox.Show("Renting cars:\n" + string.Join(", ", selectedCarPlates));
         }
-    }
 }
+}
+

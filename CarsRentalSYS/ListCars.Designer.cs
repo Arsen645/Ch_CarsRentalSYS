@@ -61,7 +61,7 @@
             this.grdCars.Name = "grdCars";
             this.grdCars.Size = new System.Drawing.Size(776, 150);
             this.grdCars.TabIndex = 0;
-            this.grdCars.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStock_CellClick);
+            this.grdCars.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCars_CellClick);
             // 
             // menuStrip2
             // 
