@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.Formats.Asn1;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -22,9 +23,9 @@ namespace CarsRentalSYS
 
         public string PLATENO { get; set; }
 
-        public string BRAND { get; set; }
+        public int BRANDID { get; set; }
 
-        public string MODEL { get; set; }
+        public int MODELID { get; set; }
 
         public int YEAROFMANUFACTURE { get; set; }
 
@@ -38,20 +39,20 @@ namespace CarsRentalSYS
 
         //No-argument constructor (using the multi-argument constructor via this reference)
 
-        public Cars() : this("", "", "", 0, 'A', 0) { }
+        public Cars() : this("", 1, 1, 0, 'A', 0) { }
 
 
         //The multi-argument constructor
 
-        public Cars(string PLATENO, string BRAND, string MODEL, int YEAROFMANUFACTURE, char STATUS, int CARCLASSID)
+        public Cars(string PLATENO, int BRANDID, int MODELID, int YEAROFMANUFACTURE, char STATUS, int CARCLASSID)
 
         {
 
             this.PLATENO = PLATENO;
 
-            this.BRAND = BRAND;
+            this.BRANDID = BRANDID;
 
-            this.MODEL = MODEL;
+            this.MODELID = MODELID;
 
             this.YEAROFMANUFACTURE = YEAROFMANUFACTURE;
 
@@ -70,8 +71,8 @@ namespace CarsRentalSYS
         public override string ToString()
         {
             return "PLATENO: " + PLATENO + "\n" +
-            "BRAND: " + BRAND + "\n" +
-            "MODEL: " + MODEL + "\n" +
+            "BRAND: " + BRANDID + "\n" +
+            "MODEL: " + MODELID + "\n" +
             "YEAROFMANUFACTURE: " + YEAROFMANUFACTURE + "\n" +
             "STATUS: " + STATUS + "\n" +
             "CARCLASSID: " + CARCLASSID;
@@ -89,9 +90,18 @@ namespace CarsRentalSYS
 
             //Define the SQL query to be executed
 
-            string sqlQuery = "SELECT * " +
-
-            "FROM cars ORDER BY brand";
+            string sqlQuery = "SELECT cars.Plateno AS Plateno, " +
+            "br.BrandName AS Brand, " +
+            "model.ModelName AS Model, " +
+            "cars.YearOfManufacture AS YearOfManufacture, " +
+            "cars.Status AS Status, " +
+            "cc.ClassName AS CarClass " +
+                " FROM Cars cars " +
+                "JOIN CarBrands br " +
+                "ON cars.BrandID = br.BrandID " +
+                "JOIN CarModels model ON cars.ModelID = model.ModelID " +
+                "JOIN CarClass cc ON cars.CarClassID = cc.ClassID " +
+                "ORDER BY br.BrandName";
 
 
             //Execute the SQL query

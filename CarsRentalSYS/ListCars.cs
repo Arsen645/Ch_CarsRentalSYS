@@ -55,6 +55,11 @@ namespace CarsRentalSYS
             // Process rental
             MessageBox.Show("Renting cars:\n" + string.Join(", ", selectedCarPlates));
         }
-}
+
+        private void grdCars_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }
 

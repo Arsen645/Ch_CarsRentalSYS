@@ -54,7 +54,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCarClassId = new System.Windows.Forms.TextBox();
-            this.txtClassName = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtMonthlyRate = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -263,14 +262,6 @@
             this.txtCarClassId.TabIndex = 9;
             this.txtCarClassId.TextChanged += new System.EventHandler(this.txtCarClassId_TextChanged);
             // 
-            // txtClassName
-            // 
-            this.txtClassName.Location = new System.Drawing.Point(117, 94);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(127, 20);
-            this.txtClassName.TabIndex = 10;
-            this.txtClassName.TextChanged += new System.EventHandler(this.txtClassName_TextChanged);
-            // 
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(117, 130);
@@ -298,9 +289,9 @@
             // cmbCarClass
             // 
             this.cmbCarClass.FormattingEnabled = true;
-            this.cmbCarClass.Location = new System.Drawing.Point(331, 100);
+            this.cmbCarClass.Location = new System.Drawing.Point(117, 91);
             this.cmbCarClass.Name = "cmbCarClass";
-            this.cmbCarClass.Size = new System.Drawing.Size(249, 21);
+            this.cmbCarClass.Size = new System.Drawing.Size(127, 21);
             this.cmbCarClass.TabIndex = 14;
             this.cmbCarClass.SelectedIndexChanged += new System.EventHandler(this.cmbCarClass_SelectedIndexChanged);
             // 
@@ -313,7 +304,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtMonthlyRate);
             this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtClassName);
             this.Controls.Add(this.txtCarClassId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -358,7 +348,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCarClassId;
-        private System.Windows.Forms.TextBox txtClassName;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtMonthlyRate;
         private System.Windows.Forms.Button btnSave;

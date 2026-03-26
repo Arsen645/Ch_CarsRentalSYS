@@ -35,7 +35,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtModel = new System.Windows.Forms.TextBox();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.carClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,10 +61,10 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmbCarClass = new System.Windows.Forms.ComboBox();
             this.txtPlateNumber = new System.Windows.Forms.TextBox();
-            this.txtBrand = new System.Windows.Forms.TextBox();
             this.lblBrand = new System.Windows.Forms.Label();
             this.cboBrand = new System.Windows.Forms.ComboBox();
             this.cboModel = new System.Windows.Forms.ComboBox();
+            this.lblClass = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,18 +116,11 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 14;
             // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(80, 119);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(154, 20);
-            this.txtModel.TabIndex = 8;
-            // 
             // txtYear
             // 
             this.txtYear.Location = new System.Drawing.Point(80, 152);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(154, 20);
+            this.txtYear.Size = new System.Drawing.Size(150, 20);
             this.txtYear.TabIndex = 9;
             // 
             // menuStrip2
@@ -288,7 +280,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(166, 255);
+            this.button1.Location = new System.Drawing.Point(163, 255);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 22);
             this.button1.TabIndex = 13;
@@ -304,24 +296,17 @@
             // cmbCarClass
             // 
             this.cmbCarClass.FormattingEnabled = true;
-            this.cmbCarClass.Location = new System.Drawing.Point(80, 201);
+            this.cmbCarClass.Location = new System.Drawing.Point(80, 187);
             this.cmbCarClass.Name = "cmbCarClass";
-            this.cmbCarClass.Size = new System.Drawing.Size(147, 21);
+            this.cmbCarClass.Size = new System.Drawing.Size(150, 21);
             this.cmbCarClass.TabIndex = 17;
             // 
             // txtPlateNumber
             // 
             this.txtPlateNumber.Location = new System.Drawing.Point(80, 56);
             this.txtPlateNumber.Name = "txtPlateNumber";
-            this.txtPlateNumber.Size = new System.Drawing.Size(184, 20);
+            this.txtPlateNumber.Size = new System.Drawing.Size(150, 20);
             this.txtPlateNumber.TabIndex = 18;
-            // 
-            // txtBrand
-            // 
-            this.txtBrand.Location = new System.Drawing.Point(79, 84);
-            this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(154, 20);
-            this.txtBrand.TabIndex = 22;
             // 
             // lblBrand
             // 
@@ -335,7 +320,7 @@
             // cboBrand
             // 
             this.cboBrand.FormattingEnabled = true;
-            this.cboBrand.Location = new System.Drawing.Point(279, 89);
+            this.cboBrand.Location = new System.Drawing.Point(80, 84);
             this.cboBrand.Name = "cboBrand";
             this.cboBrand.Size = new System.Drawing.Size(150, 21);
             this.cboBrand.TabIndex = 25;
@@ -344,26 +329,34 @@
             // cboModel
             // 
             this.cboModel.FormattingEnabled = true;
-            this.cboModel.Location = new System.Drawing.Point(279, 118);
+            this.cboModel.Location = new System.Drawing.Point(80, 119);
             this.cboModel.Name = "cboModel";
             this.cboModel.Size = new System.Drawing.Size(150, 21);
             this.cboModel.TabIndex = 26;
+            // 
+            // lblClass
+            // 
+            this.lblClass.AutoSize = true;
+            this.lblClass.Location = new System.Drawing.Point(23, 195);
+            this.lblClass.Name = "lblClass";
+            this.lblClass.Size = new System.Drawing.Size(32, 13);
+            this.lblClass.TabIndex = 27;
+            this.lblClass.Text = "Class";
             // 
             // addCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblClass);
             this.Controls.Add(this.cboModel);
             this.Controls.Add(this.cboBrand);
             this.Controls.Add(this.lblBrand);
-            this.Controls.Add(this.txtBrand);
             this.Controls.Add(this.txtPlateNumber);
             this.Controls.Add(this.cmbCarClass);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.txtYear);
-            this.Controls.Add(this.txtModel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -388,7 +381,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem carClassesToolStripMenuItem;
@@ -415,9 +407,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox cmbCarClass;
         private System.Windows.Forms.TextBox txtPlateNumber;
-        private System.Windows.Forms.TextBox txtBrand;
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.ComboBox cboBrand;
         private System.Windows.Forms.ComboBox cboModel;
+        private System.Windows.Forms.Label lblClass;
     }
 }

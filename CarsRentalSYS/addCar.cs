@@ -19,6 +19,7 @@ namespace CarsRentalSYS
         {
             InitializeComponent();
         }
+        String brandID;
         public bool IsValidIrishPlate(string plate)
         {
             string pattern = @"^\d{2}-[A-Z]{1,2}-\d{1,5}$";
@@ -66,22 +67,31 @@ namespace CarsRentalSYS
 
                 cboBrand.DataSource = dt;
                 cboBrand.DisplayMember = "brandname"; // shown to user
-                cboBrand.ValueMember = "brandid";     // actual ID
+                cboBrand.ValueMember = "brandid";
+                // actual ID
+                loadCarModels();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading car brands: " + ex.Message);
             }
+            
+
+
+        }
+        private void loadCarModels() {
             try
             {
                 OracleConnection conn = Database.OpenConnection();
-
-                string query = "SELECT * FROM CARMODELS";
+                if (cboBrand.SelectedValue == null || cboBrand.SelectedValue is DataRowView)
+                    return;
+                string query = "SELECT * FROM CARMODELS where brandid = :cbrandID";
 
                 OracleDataAdapter da = new OracleDataAdapter(query, conn);
+                da.SelectCommand.Parameters.Add(new OracleParameter(":cbrandID", Convert.ToInt32(cboBrand.SelectedValue)));
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
+                //MessageBox.Show(cboBrand.SelectedValue.ToString());
                 cboModel.DataSource = dt;
                 cboModel.DisplayMember = "MODELNAME"; // shown to user
                 cboModel.ValueMember = "MODELID";     // actual ID
@@ -90,18 +100,18 @@ namespace CarsRentalSYS
                     MessageBox.Show("No models found in database.");
                     return;
                 }
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading car model: " + ex.Message);
             }
         }
-        private void loadCarBrands() {
-            
-        }
         private void cboBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
+            loadCarModels();
+
+
             //if (cboBrand.SelectedValue == null)
             //    return; // No brand selected, exit the method
             //try
@@ -144,12 +154,7 @@ namespace CarsRentalSYS
                 MessageBox.Show("Invalid Irish car plate format. Example: 23-KY-1234");
                 return;
             }
-            else
-            {
-                // Valid plate format, you can proceed with further processing if needed
-                MessageBox.Show("Valid Irish car plate format.");
-            }
-            if (txtYear.Text.Length != 4 || !int.TryParse(txtYear.Text, out _))
+            if (txtYear.Text.Length != 4 || !int.TryParse(txtYear.Text, out _) )
             {
                 MessageBox.Show("Please enter a valid 4-digit year.");
                 return;
@@ -159,14 +164,14 @@ namespace CarsRentalSYS
             {
                 OracleConnection conn = Database.OpenConnection();
 
-                string query = "INSERT INTO Cars (PlateNo, Brand, Model, YearOfManufacture, Status, CarClassID) " +
+                string query = "INSERT INTO Cars (PlateNo, Brandid, Modelid, YearOfManufacture, Status, CarClassID) " +
                                "VALUES (:PlateNo, :Brand, :Model, :Year, :Status, :CarClassID)";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
-
+                
                 cmd.Parameters.Add(":PlateNo", txtPlateNumber.Text);
-                cmd.Parameters.Add(":Brand", txtBrand.Text);
-                cmd.Parameters.Add(":Model", txtModel.Text);
+                cmd.Parameters.Add(":Brand", cboBrand.SelectedValue);
+                cmd.Parameters.Add(":Model", cboModel.SelectedValue);
                 cmd.Parameters.Add(":Year", int.Parse(txtYear.Text));
                 cmd.Parameters.Add(":Status", "A");
                 cmd.Parameters.Add(":CarClassID", Convert.ToInt32(cmbCarClass.SelectedValue));
@@ -174,8 +179,7 @@ namespace CarsRentalSYS
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Car saved successfully");
-                txtBrand.Clear();
-                txtModel.Clear();
+                
                 txtYear.Clear();
                 txtPlateNumber.Clear();
 

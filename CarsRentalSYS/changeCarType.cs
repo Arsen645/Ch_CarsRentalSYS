@@ -72,12 +72,7 @@ namespace CarsRentalSYS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtClassName.Text.Any(char.IsDigit))
-            {
-                MessageBox.Show("Class name must not contain numbers");
-                txtClassName.Focus();
-                return;
-            }
+            
 
             if (txtDescription.Text.Any(char.IsDigit))
             {
@@ -121,8 +116,6 @@ namespace CarsRentalSYS
                 conn.Close();
 
                 MessageBox.Show("Car class updated successfully");
-                //txtCarClassId.Clear();
-                txtClassName.Clear();
                 txtDescription.Clear();
                 txtMonthlyRate.Clear();
                 changeCarType_Load(sender, e); // Refresh the combo box to show updated data
