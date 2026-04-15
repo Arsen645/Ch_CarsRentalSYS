@@ -17,6 +17,8 @@ namespace CarsRentalSYS
         {
             InitializeComponent();
         }
+
+
         
         private void removeCar_Load(object sender, EventArgs e)
         {
@@ -66,18 +68,20 @@ namespace CarsRentalSYS
         }
         private void grdCarsTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+            DataGridViewRow row = grdCarsTable.Rows[e.RowIndex];
 
-            foreach (DataGridViewRow row in grdCarsTable.SelectedRows)
-            {
-                if (row.Cells[0].Value != null)
+            if (row.Cells[0].Value != null)
                 {
                     if (grdCarsTable.Columns[e.ColumnIndex].Name == "btnEdit")
                     {
-                        Form1 menu = new Form1();
-                        menu.Show();
-                        this.Close();
-                    }
-                    if (grdCarsTable.Columns[e.ColumnIndex].Name == "btnDelete")
+                    string plate = row.Cells["PLATENO"].Value.ToString();
+
+                    updateCar form = new updateCar(plate);
+                    form.Show();
+                    this.Close();
+                }
+                    else if (grdCarsTable.Columns[e.ColumnIndex].Name == "btnDelete")
                     {
                         
                     
@@ -90,7 +94,7 @@ namespace CarsRentalSYS
                     {
                         return;
                     }
-                    }
+                    
                 }
             }
                 

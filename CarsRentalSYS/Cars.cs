@@ -86,17 +86,30 @@ namespace CarsRentalSYS
         public static DataSet GetAllProducts()
 
         {
+          
+            OracleConnection conn = Database.OpenConnection();
 
-            //Define the SQL query to be executed
+            string query = @"
+    SELECT 
+        cars.plateno        AS PLATENO,
+    cars.carclassid     AS CARCLASSID,
+    cars.brandid        AS BRANDID,
+    cars.modelid        AS MODELID,
+    carclass.classname  AS CLASSNAME,
+    carbrands.brandname AS BRANDNAME,
+    carmodels.modelname AS MODELNAME
+    FROM cars
+    JOIN carclass ON cars.carclassid = carclass.classid
+    JOIN carbrands ON cars.brandid = carbrands.brandid
+    JOIN carmodels ON cars.modelid = carmodels.modelid";
 
-            string sqlQuery = "SELECT ProductId, Name, Qty, Price " +
+            OracleDataAdapter da = new OracleDataAdapter(query, conn);
 
-            "FROM Products ORDER BY ProductId";
+            DataSet ds = new DataSet();
+            da.Fill(ds);
 
-
-            //Execute the SQL query
-
-            return Database.ExecuteMultiRowQuery(sqlQuery);
-        }
+            return ds;
+        
+    }
     }
 }

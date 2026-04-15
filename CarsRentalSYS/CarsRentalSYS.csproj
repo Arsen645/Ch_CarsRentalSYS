@@ -178,6 +178,12 @@
     <Compile Include="showCustomerRates.Designer.cs">
       <DependentUpon>showCustomerRates.cs</DependentUpon>
     </Compile>
+    <Compile Include="updateCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateCar.Designer.cs">
+      <DependentUpon>updateCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="updateCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="showCustomerRates.resx">
       <DependentUpon>showCustomerRates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateCar.resx">
+      <DependentUpon>updateCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateCustomer.resx">
       <DependentUpon>updateCustomer.cs</DependentUpon>

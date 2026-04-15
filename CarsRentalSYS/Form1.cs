@@ -191,5 +191,12 @@ namespace CarsRentalSYS
                 MessageBox.Show("Error searching cars: " + ex.Message);
             }
         }
+
+        private void updateACarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updateCar f1 = new updateCar();
+            f1.Show();
+            this.Hide();
+        }
     }
 }

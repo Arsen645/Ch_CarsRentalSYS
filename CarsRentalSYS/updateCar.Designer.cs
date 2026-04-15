@@ -1,6 +1,6 @@
 ﻿namespace CarsRentalSYS
 {
-    partial class Form1
+    partial class updateCar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.lblClassId = new System.Windows.Forms.Label();
+            this.lblBrand = new System.Windows.Forms.Label();
+            this.lblModel = new System.Windows.Forms.Label();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.cboClass = new System.Windows.Forms.ComboBox();
+            this.cboModel = new System.Windows.Forms.ComboBox();
+            this.cboBrand = new System.Windows.Forms.ComboBox();
+            this.lblPlate = new System.Windows.Forms.Label();
+            this.cboPlate = new System.Windows.Forms.ComboBox();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.carClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setCarTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +48,7 @@
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rentalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,37 +62,102 @@
             this.showCustomersRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairCostAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnViewCars = new System.Windows.Forms.Button();
-            this.txtMainSearch = new System.Windows.Forms.TextBox();
-            this.dtFromDate = new System.Windows.Forms.DateTimePicker();
-            this.dtToDate = new System.Windows.Forms.DateTimePicker();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.grvSearchResult = new System.Windows.Forms.DataGridView();
-            this.updateACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnUpdateCarInfo = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // contextMenuStrip1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 54);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(894, 469);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // menuStrip1
+            // txtYear
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(914, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.txtYear.Location = new System.Drawing.Point(157, 213);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(156, 20);
+            this.txtYear.TabIndex = 4;
+            // 
+            // lblClassId
+            // 
+            this.lblClassId.AutoSize = true;
+            this.lblClassId.Location = new System.Drawing.Point(47, 63);
+            this.lblClassId.Name = "lblClassId";
+            this.lblClassId.Size = new System.Drawing.Size(32, 13);
+            this.lblClassId.TabIndex = 5;
+            this.lblClassId.Text = "Class";
+            // 
+            // lblBrand
+            // 
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Location = new System.Drawing.Point(47, 116);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(35, 13);
+            this.lblBrand.TabIndex = 6;
+            this.lblBrand.Text = "Brand";
+            // 
+            // lblModel
+            // 
+            this.lblModel.AutoSize = true;
+            this.lblModel.Location = new System.Drawing.Point(47, 172);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(36, 13);
+            this.lblModel.TabIndex = 7;
+            this.lblModel.Text = "Model";
+            // 
+            // lblYear
+            // 
+            this.lblYear.AutoSize = true;
+            this.lblYear.Location = new System.Drawing.Point(47, 220);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(29, 13);
+            this.lblYear.TabIndex = 8;
+            this.lblYear.Text = "Year";
+            // 
+            // cboClass
+            // 
+            this.cboClass.FormattingEnabled = true;
+            this.cboClass.Location = new System.Drawing.Point(166, 60);
+            this.cboClass.Name = "cboClass";
+            this.cboClass.Size = new System.Drawing.Size(147, 21);
+            this.cboClass.TabIndex = 9;
+            this.cboClass.SelectedIndexChanged += new System.EventHandler(this.cboClass_SelectedIndexChanged);
+            // 
+            // cboModel
+            // 
+            this.cboModel.FormattingEnabled = true;
+            this.cboModel.Location = new System.Drawing.Point(166, 164);
+            this.cboModel.Name = "cboModel";
+            this.cboModel.Size = new System.Drawing.Size(147, 21);
+            this.cboModel.TabIndex = 10;
+            this.cboModel.SelectedIndexChanged += new System.EventHandler(this.cboModel_SelectedIndexChanged);
+            // 
+            // cboBrand
+            // 
+            this.cboBrand.FormattingEnabled = true;
+            this.cboBrand.Location = new System.Drawing.Point(166, 113);
+            this.cboBrand.Name = "cboBrand";
+            this.cboBrand.Size = new System.Drawing.Size(147, 21);
+            this.cboBrand.TabIndex = 11;
+            this.cboBrand.SelectedIndexChanged += new System.EventHandler(this.cboBrand_SelectedIndexChanged);
+            // 
+            // lblPlate
+            // 
+            this.lblPlate.AutoSize = true;
+            this.lblPlate.Location = new System.Drawing.Point(47, 36);
+            this.lblPlate.Name = "lblPlate";
+            this.lblPlate.Size = new System.Drawing.Size(48, 13);
+            this.lblPlate.TabIndex = 12;
+            this.lblPlate.Text = "Plate No";
+            // 
+            // cboPlate
+            // 
+            this.cboPlate.FormattingEnabled = true;
+            this.cboPlate.Location = new System.Drawing.Point(166, 28);
+            this.cboPlate.Name = "cboPlate";
+            this.cboPlate.Size = new System.Drawing.Size(147, 21);
+            this.cboPlate.TabIndex = 13;
+            this.cboPlate.SelectedIndexChanged += new System.EventHandler(this.cboPlate_SelectedIndexChanged);
             // 
             // menuStrip2
             // 
@@ -95,8 +170,8 @@
             this.exitToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(914, 24);
-            this.menuStrip2.TabIndex = 3;
+            this.menuStrip2.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip2.TabIndex = 14;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // carClassesToolStripMenuItem
@@ -108,28 +183,24 @@
             this.carClassesToolStripMenuItem.Name = "carClassesToolStripMenuItem";
             this.carClassesToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.carClassesToolStripMenuItem.Text = "Car Classes";
-            this.carClassesToolStripMenuItem.Click += new System.EventHandler(this.carClassesToolStripMenuItem_Click);
             // 
             // setCarTypeToolStripMenuItem
             // 
             this.setCarTypeToolStripMenuItem.Name = "setCarTypeToolStripMenuItem";
             this.setCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.setCarTypeToolStripMenuItem.Text = "Set Car Type";
-            this.setCarTypeToolStripMenuItem.Click += new System.EventHandler(this.setCarTypeToolStripMenuItem_Click);
             // 
             // changeCarTypeToolStripMenuItem
             // 
             this.changeCarTypeToolStripMenuItem.Name = "changeCarTypeToolStripMenuItem";
             this.changeCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.changeCarTypeToolStripMenuItem.Text = "Change Car Type";
-            this.changeCarTypeToolStripMenuItem.Click += new System.EventHandler(this.changeCarTypeToolStripMenuItem_Click);
             // 
             // removeCarTypeToolStripMenuItem
             // 
             this.removeCarTypeToolStripMenuItem.Name = "removeCarTypeToolStripMenuItem";
             this.removeCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.removeCarTypeToolStripMenuItem.Text = "Remove Car Type";
-            this.removeCarTypeToolStripMenuItem.Click += new System.EventHandler(this.removeCarTypeToolStripMenuItem_Click);
             // 
             // carsToolStripMenuItem
             // 
@@ -144,16 +215,20 @@
             // addACarToolStripMenuItem
             // 
             this.addACarToolStripMenuItem.Name = "addACarToolStripMenuItem";
-            this.addACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.addACarToolStripMenuItem.Text = "Add a car";
-            this.addACarToolStripMenuItem.Click += new System.EventHandler(this.addACarToolStripMenuItem_Click);
             // 
             // removeACarToolStripMenuItem
             // 
             this.removeACarToolStripMenuItem.Name = "removeACarToolStripMenuItem";
-            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.removeACarToolStripMenuItem.Text = "Remove a car";
-            this.removeACarToolStripMenuItem.Click += new System.EventHandler(this.removeACarToolStripMenuItem_Click);
+            // 
+            // updateACarToolStripMenuItem
+            // 
+            this.updateACarToolStripMenuItem.Name = "updateACarToolStripMenuItem";
+            this.updateACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.updateACarToolStripMenuItem.Text = "Update a car";
             // 
             // rentalsToolStripMenuItem
             // 
@@ -170,21 +245,18 @@
             this.makeAReservationToolStripMenuItem.Name = "makeAReservationToolStripMenuItem";
             this.makeAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.makeAReservationToolStripMenuItem.Text = "Make a reservation";
-            this.makeAReservationToolStripMenuItem.Click += new System.EventHandler(this.makeAReservationToolStripMenuItem_Click);
             // 
             // cancelAReservationToolStripMenuItem
             // 
             this.cancelAReservationToolStripMenuItem.Name = "cancelAReservationToolStripMenuItem";
             this.cancelAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.cancelAReservationToolStripMenuItem.Text = "Change a reservation";
-            this.cancelAReservationToolStripMenuItem.Click += new System.EventHandler(this.cancelAReservationToolStripMenuItem_Click);
             // 
             // cancelAReservationToolStripMenuItem1
             // 
             this.cancelAReservationToolStripMenuItem1.Name = "cancelAReservationToolStripMenuItem1";
             this.cancelAReservationToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
             this.cancelAReservationToolStripMenuItem1.Text = "Cancel a reservation";
-            this.cancelAReservationToolStripMenuItem1.Click += new System.EventHandler(this.cancelAReservationToolStripMenuItem1_Click);
             // 
             // customersToolStripMenuItem
             // 
@@ -201,21 +273,18 @@
             this.registerACustomerToolStripMenuItem.Name = "registerACustomerToolStripMenuItem";
             this.registerACustomerToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.registerACustomerToolStripMenuItem.Text = "Register a customer";
-            this.registerACustomerToolStripMenuItem.Click += new System.EventHandler(this.registerACustomerToolStripMenuItem_Click);
             // 
             // listCustomersToolStripMenuItem
             // 
             this.listCustomersToolStripMenuItem.Name = "listCustomersToolStripMenuItem";
             this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.listCustomersToolStripMenuItem.Text = "List customers";
-            this.listCustomersToolStripMenuItem.Click += new System.EventHandler(this.listCustomersToolStripMenuItem_Click);
             // 
             // updateCustomerInformationToolStripMenuItem
             // 
             this.updateCustomerInformationToolStripMenuItem.Name = "updateCustomerInformationToolStripMenuItem";
             this.updateCustomerInformationToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.updateCustomerInformationToolStripMenuItem.Text = "Update customer information";
-            this.updateCustomerInformationToolStripMenuItem.Click += new System.EventHandler(this.updateCustomerInformationToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
@@ -232,153 +301,97 @@
             this.carDamageAnalysisToolStripMenuItem.Name = "carDamageAnalysisToolStripMenuItem";
             this.carDamageAnalysisToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.carDamageAnalysisToolStripMenuItem.Text = "Generate analysis";
-            this.carDamageAnalysisToolStripMenuItem.Click += new System.EventHandler(this.carDamageAnalysisToolStripMenuItem_Click);
             // 
             // showCustomersRateToolStripMenuItem
             // 
             this.showCustomersRateToolStripMenuItem.Name = "showCustomersRateToolStripMenuItem";
             this.showCustomersRateToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.showCustomersRateToolStripMenuItem.Text = "Show customers rates";
-            this.showCustomersRateToolStripMenuItem.Click += new System.EventHandler(this.showCustomersRateToolStripMenuItem_Click);
             // 
             // repairCostAnalysisToolStripMenuItem
             // 
             this.repairCostAnalysisToolStripMenuItem.Name = "repairCostAnalysisToolStripMenuItem";
             this.repairCostAnalysisToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.repairCostAnalysisToolStripMenuItem.Text = "Generate invoice";
-            this.repairCostAnalysisToolStripMenuItem.Click += new System.EventHandler(this.repairCostAnalysisToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // label1
+            // btnUpdateCarInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(367, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 39);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Welcome";
+            this.btnUpdateCarInfo.Location = new System.Drawing.Point(224, 269);
+            this.btnUpdateCarInfo.Name = "btnUpdateCarInfo";
+            this.btnUpdateCarInfo.Size = new System.Drawing.Size(88, 22);
+            this.btnUpdateCarInfo.TabIndex = 15;
+            this.btnUpdateCarInfo.Text = "Update";
+            this.btnUpdateCarInfo.UseVisualStyleBackColor = true;
+            this.btnUpdateCarInfo.Click += new System.EventHandler(this.btnUpdateCarInfo_Click);
             // 
-            // btnViewCars
-            // 
-            this.btnViewCars.Location = new System.Drawing.Point(705, 79);
-            this.btnViewCars.Name = "btnViewCars";
-            this.btnViewCars.Size = new System.Drawing.Size(157, 40);
-            this.btnViewCars.TabIndex = 5;
-            this.btnViewCars.Text = "View Cars";
-            this.btnViewCars.UseVisualStyleBackColor = true;
-            this.btnViewCars.Click += new System.EventHandler(this.btnViewCars_Click);
-            // 
-            // txtMainSearch
-            // 
-            this.txtMainSearch.Location = new System.Drawing.Point(47, 191);
-            this.txtMainSearch.Name = "txtMainSearch";
-            this.txtMainSearch.Size = new System.Drawing.Size(346, 20);
-            this.txtMainSearch.TabIndex = 6;
-            // 
-            // dtFromDate
-            // 
-            this.dtFromDate.Location = new System.Drawing.Point(417, 191);
-            this.dtFromDate.Name = "dtFromDate";
-            this.dtFromDate.Size = new System.Drawing.Size(120, 20);
-            this.dtFromDate.TabIndex = 7;
-            // 
-            // dtToDate
-            // 
-            this.dtToDate.Location = new System.Drawing.Point(552, 191);
-            this.dtToDate.Name = "dtToDate";
-            this.dtToDate.Size = new System.Drawing.Size(120, 20);
-            this.dtToDate.TabIndex = 8;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(737, 191);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(74, 19);
-            this.btnSearch.TabIndex = 9;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // grvSearchResult
-            // 
-            this.grvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvSearchResult.Location = new System.Drawing.Point(46, 236);
-            this.grvSearchResult.Name = "grvSearchResult";
-            this.grvSearchResult.Size = new System.Drawing.Size(815, 262);
-            this.grvSearchResult.TabIndex = 10;
-            // 
-            // updateACarToolStripMenuItem
-            // 
-            this.updateACarToolStripMenuItem.Name = "updateACarToolStripMenuItem";
-            this.updateACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.updateACarToolStripMenuItem.Text = "Update a car";
-            this.updateACarToolStripMenuItem.Click += new System.EventHandler(this.updateACarToolStripMenuItem_Click);
-            // 
-            // Form1
+            // updateCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 530);
-            this.Controls.Add(this.grvSearchResult);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dtToDate);
-            this.Controls.Add(this.dtFromDate);
-            this.Controls.Add(this.txtMainSearch);
-            this.Controls.Add(this.btnViewCars);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUpdateCarInfo);
             this.Controls.Add(this.menuStrip2);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Controls.Add(this.cboPlate);
+            this.Controls.Add(this.lblPlate);
+            this.Controls.Add(this.cboBrand);
+            this.Controls.Add(this.cboModel);
+            this.Controls.Add(this.cboClass);
+            this.Controls.Add(this.lblYear);
+            this.Controls.Add(this.lblModel);
+            this.Controls.Add(this.lblBrand);
+            this.Controls.Add(this.lblClassId);
+            this.Controls.Add(this.txtYear);
+            this.Name = "updateCar";
+            this.Text = "updateCar";
+            this.Load += new System.EventHandler(this.updateCar_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.Label lblClassId;
+        private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.Label lblModel;
+        private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.ComboBox cboClass;
+        private System.Windows.Forms.ComboBox cboModel;
+        private System.Windows.Forms.ComboBox cboBrand;
+        private System.Windows.Forms.Label lblPlate;
+        private System.Windows.Forms.ComboBox cboPlate;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem carClassesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setCarTypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeCarTypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeCarTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addACarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeACarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateACarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem makeAReservationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelAReservationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelAReservationToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerACustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listCustomersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateCustomerInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carDamageAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showCustomersRateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelAReservationToolStripMenuItem1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnViewCars;
-        private System.Windows.Forms.TextBox txtMainSearch;
-        private System.Windows.Forms.DateTimePicker dtFromDate;
-        private System.Windows.Forms.DateTimePicker dtToDate;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView grvSearchResult;
-        private System.Windows.Forms.ToolStripMenuItem updateACarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button btnUpdateCarInfo;
     }
 }
-
