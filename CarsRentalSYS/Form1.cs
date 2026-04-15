@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -131,6 +132,64 @@ namespace CarsRentalSYS
             ListCars f1 = new ListCars();
             f1.Show();
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            try { 
+                OracleConnection conn = Database.OpenConnection();
+            
+            string query = @"SELECT cars.PlateNo, cars.BrandID, cars.ModelID, cars.YearOfManufacture,
+                                carclass.ClassName, carclass.MonthlyRate, carclass.Description, carmodels.ModelName AS Model,
+                                carbrands.brandName AS Brand
+                         FROM cars
+                         JOIN carclass ON cars.carClassID = carclass.ClassID
+                         JOIN carmodels ON cars.ModelID = carmodels.ModelID
+                         JOIN carbrands ON cars.brandID = carbrands.brandID
+                         WHERE cars.Status != 'D'
+                         AND (
+                            cars.PlateNo LIKE :search OR
+                            cars.BrandID LIKE :search OR
+                            carmodels.Modelname LIKE :search OR
+                            carbrands.Brandname LIKE :search OR
+                            cars.YearOfManufacture LIKE :search OR
+                            carclass.Description LIKE :search OR
+                            carclass.ClassName LIKE :search
+                         )
+                         AND NOT EXISTS (
+                            SELECT *
+                            FROM rentals
+                            WHERE rentals.CarPlateNo = cars.PlateNo
+                            AND rentals.StartDate < :finishDate
+                            AND rentals.FinishDate > :startDate
+                         )";
+
+            OracleCommand cmd = new OracleCommand(query, conn);
+
+                cmd.BindByName = true;
+
+                cmd.Parameters.Add(":search", "%" + txtMainSearch.Text + "%");
+            cmd.Parameters.Add(":startDate", dtFromDate.Value);
+            cmd.Parameters.Add(":finishDate", dtToDate.Value);
+
+                OracleDataAdapter adapter = new OracleDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                grvSearchResult.DataSource = dt;
+                grvSearchResult.Columns["MODELID"].Visible = false;
+                grvSearchResult.Columns["brandID"].Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error searching cars: " + ex.Message);
+            }
         }
     }
 }

@@ -54,8 +54,14 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.btnViewCars = new System.Windows.Forms.Button();
+            this.txtMainSearch = new System.Windows.Forms.TextBox();
+            this.dtFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtToDate = new System.Windows.Forms.DateTimePicker();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.grvSearchResult = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -67,6 +73,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(894, 469);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // menuStrip1
             // 
@@ -135,14 +142,14 @@
             // addACarToolStripMenuItem
             // 
             this.addACarToolStripMenuItem.Name = "addACarToolStripMenuItem";
-            this.addACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addACarToolStripMenuItem.Text = "Add a car";
             this.addACarToolStripMenuItem.Click += new System.EventHandler(this.addACarToolStripMenuItem_Click);
             // 
             // removeACarToolStripMenuItem
             // 
             this.removeACarToolStripMenuItem.Name = "removeACarToolStripMenuItem";
-            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeACarToolStripMenuItem.Text = "Remove a car";
             this.removeACarToolStripMenuItem.Click += new System.EventHandler(this.removeACarToolStripMenuItem_Click);
             // 
@@ -257,7 +264,7 @@
             // 
             // btnViewCars
             // 
-            this.btnViewCars.Location = new System.Drawing.Point(431, 224);
+            this.btnViewCars.Location = new System.Drawing.Point(705, 79);
             this.btnViewCars.Name = "btnViewCars";
             this.btnViewCars.Size = new System.Drawing.Size(157, 40);
             this.btnViewCars.TabIndex = 5;
@@ -265,11 +272,55 @@
             this.btnViewCars.UseVisualStyleBackColor = true;
             this.btnViewCars.Click += new System.EventHandler(this.btnViewCars_Click);
             // 
+            // txtMainSearch
+            // 
+            this.txtMainSearch.Location = new System.Drawing.Point(47, 191);
+            this.txtMainSearch.Name = "txtMainSearch";
+            this.txtMainSearch.Size = new System.Drawing.Size(346, 20);
+            this.txtMainSearch.TabIndex = 6;
+            // 
+            // dtFromDate
+            // 
+            this.dtFromDate.Location = new System.Drawing.Point(417, 191);
+            this.dtFromDate.Name = "dtFromDate";
+            this.dtFromDate.Size = new System.Drawing.Size(120, 20);
+            this.dtFromDate.TabIndex = 7;
+            // 
+            // dtToDate
+            // 
+            this.dtToDate.Location = new System.Drawing.Point(552, 191);
+            this.dtToDate.Name = "dtToDate";
+            this.dtToDate.Size = new System.Drawing.Size(120, 20);
+            this.dtToDate.TabIndex = 8;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(737, 191);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(74, 19);
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // grvSearchResult
+            // 
+            this.grvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvSearchResult.Location = new System.Drawing.Point(46, 236);
+            this.grvSearchResult.Name = "grvSearchResult";
+            this.grvSearchResult.Size = new System.Drawing.Size(815, 262);
+            this.grvSearchResult.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 530);
+            this.Controls.Add(this.grvSearchResult);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.dtToDate);
+            this.Controls.Add(this.dtFromDate);
+            this.Controls.Add(this.txtMainSearch);
             this.Controls.Add(this.btnViewCars);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -281,6 +332,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,6 +364,11 @@
         private System.Windows.Forms.ToolStripMenuItem cancelAReservationToolStripMenuItem1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnViewCars;
+        private System.Windows.Forms.TextBox txtMainSearch;
+        private System.Windows.Forms.DateTimePicker dtFromDate;
+        private System.Windows.Forms.DateTimePicker dtToDate;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView grvSearchResult;
     }
 }
 

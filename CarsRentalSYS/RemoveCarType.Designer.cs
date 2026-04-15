@@ -52,17 +52,16 @@
             this.showCustomersRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairCostAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cboClassId = new System.Windows.Forms.ComboBox();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(109, 34);
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
             // 
             // label1
             // 
@@ -238,17 +237,28 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // cboClassId
+            // 
+            this.cboClassId.FormattingEnabled = true;
+            this.cboClassId.Location = new System.Drawing.Point(102, 36);
+            this.cboClassId.Name = "cboClassId";
+            this.cboClassId.Size = new System.Drawing.Size(121, 21);
+            this.cboClassId.TabIndex = 7;
+            this.cboClassId.SelectedIndexChanged += new System.EventHandler(this.cboClassId_SelectedIndexChanged);
+            // 
             // RemoveCarType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboClassId);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Name = "RemoveCarType";
             this.Text = "RemoveCarType";
+            this.Load += new System.EventHandler(this.RemoveCarType_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -282,5 +292,6 @@
         private System.Windows.Forms.ToolStripMenuItem showCustomersRateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cboClassId;
     }
 }

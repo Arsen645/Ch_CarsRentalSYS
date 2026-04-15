@@ -26,6 +26,8 @@ namespace CarsRentalSYS
             grdCars.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             grdCars.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace CarsRentalSYS
 
             if (selectedCarPlates.Count == 0)
             {
-                MessageBox.Show("Please select at least one car.");
+                MessageBox.Show("Please select one car.");
                 return;
             }
 
