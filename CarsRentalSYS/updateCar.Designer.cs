@@ -63,6 +63,8 @@
             this.repairCostAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUpdateCarInfo = new System.Windows.Forms.Button();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -323,7 +325,7 @@
             // 
             // btnUpdateCarInfo
             // 
-            this.btnUpdateCarInfo.Location = new System.Drawing.Point(224, 269);
+            this.btnUpdateCarInfo.Location = new System.Drawing.Point(225, 290);
             this.btnUpdateCarInfo.Name = "btnUpdateCarInfo";
             this.btnUpdateCarInfo.Size = new System.Drawing.Size(88, 22);
             this.btnUpdateCarInfo.TabIndex = 15;
@@ -331,11 +333,30 @@
             this.btnUpdateCarInfo.UseVisualStyleBackColor = true;
             this.btnUpdateCarInfo.Click += new System.EventHandler(this.btnUpdateCarInfo_Click);
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(157, 243);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(156, 20);
+            this.txtPrice.TabIndex = 16;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(47, 250);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice.TabIndex = 17;
+            this.lblPrice.Text = "Price";
+            this.lblPrice.Click += new System.EventHandler(this.label1_Click);
+            // 
             // updateCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnUpdateCarInfo);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.cboPlate);
@@ -393,5 +414,7 @@
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btnUpdateCarInfo;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label lblPrice;
     }
 }

@@ -31,7 +31,6 @@ namespace CarsRentalSYS
         //    }
         String name;
         String description;
-        double monthlyRate;
         int carclassId;
 
         private void changeCarType_Load(object sender, EventArgs e)
@@ -82,15 +81,9 @@ namespace CarsRentalSYS
             }
 
 
-            if (!double.TryParse(txtMonthlyRate.Text, out monthlyRate))
-            {
-                MessageBox.Show("Monthly rate must contain only numbers");
-                txtMonthlyRate.Focus();
-                return;
-            }
+            
             carclassId = carclassId = Convert.ToInt32(cmbCarClass.SelectedValue);
             description = txtDescription.Text;
-            monthlyRate = double.Parse(txtMonthlyRate.Text);
             //carType = new CarType(carclassId, name, description, monthlyRate);
 
             //CarType aCarType = new CarType(carclassId, txtClassName.Text, txtClassDescription.Text, Convert.ToInt32(txtMonthlyRate.Text));
@@ -98,7 +91,7 @@ namespace CarsRentalSYS
             {
                 OracleConnection conn = Database.OpenConnection();
 
-                string query = "UPDATE carclass SET CLASSNAME = :name, DESCRIPTION = :description, MONTHLYRATE = :monthlyRate " +
+                string query = "UPDATE carclass SET CLASSNAME = :name, DESCRIPTION = :description " +
                                 "WHERE CLASSID = :carclassId";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
@@ -108,7 +101,6 @@ namespace CarsRentalSYS
                 cmd.Parameters.Add(":name", OracleDbType.Varchar2)
               .Value = cmbCarClass.Text;
                 cmd.Parameters.Add(":description",description);
-                cmd.Parameters.Add(":monthlyRate", monthlyRate);
                 cmd.Parameters.Add(":carclassId", carclassId);
                 //conn.Open();
                 cmd.ExecuteNonQuery();
@@ -117,7 +109,6 @@ namespace CarsRentalSYS
 
                 MessageBox.Show("Car class updated successfully");
                 txtDescription.Clear();
-                txtMonthlyRate.Clear();
                 changeCarType_Load(sender, e); // Refresh the combo box to show updated data
             }
             catch (Exception ex)
@@ -133,7 +124,6 @@ namespace CarsRentalSYS
             {
                 txtCarClassId.Text = row["CLASSID"].ToString();
                 txtDescription.Text = row["DESCRIPTION"].ToString();
-                txtMonthlyRate.Text = row["MONTHLYRATE"].ToString();
             }
         }
 

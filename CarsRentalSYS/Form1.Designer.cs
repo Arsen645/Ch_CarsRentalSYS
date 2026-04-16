@@ -39,6 +39,7 @@
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rentalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +60,6 @@
             this.dtToDate = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.Button();
             this.grvSearchResult = new System.Windows.Forms.DataGridView();
-            this.updateACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).BeginInit();
@@ -144,16 +144,23 @@
             // addACarToolStripMenuItem
             // 
             this.addACarToolStripMenuItem.Name = "addACarToolStripMenuItem";
-            this.addACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.addACarToolStripMenuItem.Text = "Add a car";
             this.addACarToolStripMenuItem.Click += new System.EventHandler(this.addACarToolStripMenuItem_Click);
             // 
             // removeACarToolStripMenuItem
             // 
             this.removeACarToolStripMenuItem.Name = "removeACarToolStripMenuItem";
-            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.removeACarToolStripMenuItem.Text = "Remove a car";
             this.removeACarToolStripMenuItem.Click += new System.EventHandler(this.removeACarToolStripMenuItem_Click);
+            // 
+            // updateACarToolStripMenuItem
+            // 
+            this.updateACarToolStripMenuItem.Name = "updateACarToolStripMenuItem";
+            this.updateACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.updateACarToolStripMenuItem.Text = "Update a car";
+            this.updateACarToolStripMenuItem.Click += new System.EventHandler(this.updateACarToolStripMenuItem_Click);
             // 
             // rentalsToolStripMenuItem
             // 
@@ -312,13 +319,7 @@
             this.grvSearchResult.Name = "grvSearchResult";
             this.grvSearchResult.Size = new System.Drawing.Size(815, 262);
             this.grvSearchResult.TabIndex = 10;
-            // 
-            // updateACarToolStripMenuItem
-            // 
-            this.updateACarToolStripMenuItem.Name = "updateACarToolStripMenuItem";
-            this.updateACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.updateACarToolStripMenuItem.Text = "Update a car";
-            this.updateACarToolStripMenuItem.Click += new System.EventHandler(this.updateACarToolStripMenuItem_Click);
+            this.grvSearchResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSearchResult_CellContentClick);
             // 
             // Form1
             // 

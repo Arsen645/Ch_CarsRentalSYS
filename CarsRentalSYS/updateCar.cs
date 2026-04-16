@@ -20,7 +20,8 @@ namespace CarsRentalSYS
         private int classId;
         private int brandId;
         private int modelId;
-        
+        private int price;
+
 
 
 
@@ -76,6 +77,7 @@ namespace CarsRentalSYS
                 cboModel.ValueMember = "MODELID";
 
                 cboPlate.SelectedValue = plateNo;
+                txtPrice.Text = ""; // Clear price field for new selection
             }
             catch (Exception ex)
             {
@@ -108,7 +110,8 @@ namespace CarsRentalSYS
             {
 
                 OracleConnection conn = Database.OpenConnection();
-                string query = "SELECT carclassid, brandid, modelid, YEAROFMANUFACTURE FROM cars WHERE plateno = :plate";
+                string query = "SELECT carclassid, brandid, modelid, " +
+                    "YEAROFMANUFACTURE, PRICEPERDAY FROM cars WHERE plateno = :plate";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
                 cmd.Parameters.Add(":plate", cboPlate.SelectedValue.ToString());
@@ -121,6 +124,7 @@ namespace CarsRentalSYS
                     cboBrand.SelectedValue = reader["BRANDID"];
                     cboModel.SelectedValue = reader["MODELID"];
                     txtYear.Text = reader["YEAROFMANUFACTURE"].ToString();
+                    txtPrice.Text = reader["PRICEPERDAY"].ToString();
                 }
 
                 reader.Close();
@@ -146,7 +150,7 @@ namespace CarsRentalSYS
                 OracleConnection conn = Database.OpenConnection();
 
                 string query = "UPDATE cars SET YEAROFMANUFACTURE = :year, " +
-                    "CARCLASSID = :class, BRANDID = :brand, MODELID = :model " +
+                    "CARCLASSID = :class, BRANDID = :brand, MODELID = :model, PRICEPERDAY = :price " +
                                 "WHERE PLATENO = :plate";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
@@ -164,6 +168,7 @@ namespace CarsRentalSYS
                 cmd.Parameters.Add(":plate", OracleDbType.Varchar2)
               .Value = cboPlate.Text;
                 cmd.Parameters.Add(":year", year);
+                cmd.Parameters.Add(":price", price);
                 //conn.Open();
                 cmd.ExecuteNonQuery();
                 //int rows = cmd.ExecuteNonQuery();
@@ -176,6 +181,11 @@ namespace CarsRentalSYS
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

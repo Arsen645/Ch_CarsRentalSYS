@@ -65,6 +65,8 @@
             this.cboBrand = new System.Windows.Forms.ComboBox();
             this.cboModel = new System.Windows.Forms.ComboBox();
             this.lblClass = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -343,11 +345,29 @@
             this.lblClass.TabIndex = 27;
             this.lblClass.Text = "Class";
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(80, 229);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(150, 20);
+            this.txtPrice.TabIndex = 28;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(23, 232);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice.TabIndex = 29;
+            this.lblPrice.Text = "Price";
+            // 
             // addCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.lblClass);
             this.Controls.Add(this.cboModel);
             this.Controls.Add(this.cboBrand);
@@ -411,5 +431,7 @@
         private System.Windows.Forms.ComboBox cboBrand;
         private System.Windows.Forms.ComboBox cboModel;
         private System.Windows.Forms.Label lblClass;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label lblPrice;
     }
 }

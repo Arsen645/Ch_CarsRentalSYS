@@ -32,18 +32,20 @@ namespace CarsRentalSYS
 
         public int CARCLASSID { get; set; }
 
+        public int PRICEPERDAY { get; set; }
+
 
 
 
 
         //No-argument constructor (using the multi-argument constructor via this reference)
 
-        public Cars() : this("", "", "", 0, 'A', 0) { }
+        public Cars() : this("", "", "", 0, 'A', 0, 0) { }
 
 
         //The multi-argument constructor
 
-        public Cars(string PLATENO, string BRAND, string MODEL, int YEAROFMANUFACTURE, char STATUS, int CARCLASSID)
+        public Cars(string PLATENO, string BRAND, string MODEL, int YEAROFMANUFACTURE, char STATUS, int CARCLASSID, int PRICEPERDAY)
 
         {
 
@@ -59,6 +61,8 @@ namespace CarsRentalSYS
 
             this.CARCLASSID = CARCLASSID;
 
+            this.PRICEPERDAY = PRICEPERDAY;
+
 
 
         }
@@ -73,7 +77,8 @@ namespace CarsRentalSYS
 
             return "Product ID: " + Id + "\tName: " + Name + "\tDescription: " +
 
-            Description + "\tManufacturer: " + Manufacturer + "\nQuantity: " + Quantity + "\tPrice: " + Price + "\tTypecode: " + TypeCode;
+            Description + "\tManufacturer: " + Manufacturer + "\nQuantity: " + Quantity + "\tPrice: " +
+            PRICEPERDAY + "\tTypecode: " + TypeCode;
 
         }
 
@@ -95,6 +100,8 @@ namespace CarsRentalSYS
     cars.carclassid     AS CARCLASSID,
     cars.brandid        AS BRANDID,
     cars.modelid        AS MODELID,
+    cars.yearofmanufacture AS YEAROFMANUFACTURE,
+    cars.priceperday    AS PRICEPERDAY,
     carclass.classname  AS CLASSNAME,
     carbrands.brandname AS BRANDNAME,
     carmodels.modelname AS MODELNAME

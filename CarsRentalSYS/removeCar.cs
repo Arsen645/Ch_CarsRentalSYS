@@ -26,10 +26,9 @@ namespace CarsRentalSYS
             grdCarsTable.DataSource = Cars.GetAllProducts().Tables[0];
             grdCarsTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-            grdCarsTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            grdCarsTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            grdCarsTable.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+            //grdCarsTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //grdCarsTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            grdCarsTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
             btnEdit.HeaderText = "Edit";
             btnEdit.Text = "Change";

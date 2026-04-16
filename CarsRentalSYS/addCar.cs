@@ -164,8 +164,8 @@ namespace CarsRentalSYS
             {
                 OracleConnection conn = Database.OpenConnection();
 
-                string query = "INSERT INTO Cars (PlateNo, Brandid, Modelid, YearOfManufacture, Status, CarClassID) " +
-                               "VALUES (:PlateNo, :Brand, :Model, :Year, :Status, :CarClassID)";
+                string query = "INSERT INTO Cars (PlateNo, Brandid, Modelid, YearOfManufacture, Status, CarClassID, PRICEPERDAY) " +
+                               "VALUES (:PlateNo, :Brand, :Model, :Year, :Status, :CarClassID, :Price)";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
                 
@@ -173,8 +173,10 @@ namespace CarsRentalSYS
                 cmd.Parameters.Add(":Brand", cboBrand.SelectedValue);
                 cmd.Parameters.Add(":Model", cboModel.SelectedValue);
                 cmd.Parameters.Add(":Year", int.Parse(txtYear.Text));
-                cmd.Parameters.Add(":Status", "A");
+                
+                cmd.Parameters.Add(":Status", 'A');
                 cmd.Parameters.Add(":CarClassID", Convert.ToInt32(cmbCarClass.SelectedValue));
+                cmd.Parameters.Add(":Price", int.Parse(txtPrice.Text));
 
                 cmd.ExecuteNonQuery();
 
