@@ -39,7 +39,6 @@
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rentalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +59,7 @@
             this.dtToDate = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.Button();
             this.grvSearchResult = new System.Windows.Forms.DataGridView();
+            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).BeginInit();
@@ -92,7 +92,8 @@
             this.rentalsToolStripMenuItem,
             this.customersToolStripMenuItem,
             this.adminToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.logInToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(914, 24);
@@ -135,8 +136,7 @@
             // 
             this.carsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addACarToolStripMenuItem,
-            this.removeACarToolStripMenuItem,
-            this.updateACarToolStripMenuItem});
+            this.removeACarToolStripMenuItem});
             this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
             this.carsToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.carsToolStripMenuItem.Text = "Cars";
@@ -151,16 +151,9 @@
             // removeACarToolStripMenuItem
             // 
             this.removeACarToolStripMenuItem.Name = "removeACarToolStripMenuItem";
-            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.removeACarToolStripMenuItem.Text = "Remove a car";
+            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeACarToolStripMenuItem.Text = "Cars Table";
             this.removeACarToolStripMenuItem.Click += new System.EventHandler(this.removeACarToolStripMenuItem_Click);
-            // 
-            // updateACarToolStripMenuItem
-            // 
-            this.updateACarToolStripMenuItem.Name = "updateACarToolStripMenuItem";
-            this.updateACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.updateACarToolStripMenuItem.Text = "Update a car";
-            this.updateACarToolStripMenuItem.Click += new System.EventHandler(this.updateACarToolStripMenuItem_Click);
             // 
             // rentalsToolStripMenuItem
             // 
@@ -319,6 +312,14 @@
             this.grvSearchResult.TabIndex = 10;
             this.grvSearchResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSearchResult_CellContentClick);
             // 
+            // logInToolStripMenuItem
+            // 
+            this.logInToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.logInToolStripMenuItem.Text = "Log In";
+            this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,7 +378,7 @@
         private System.Windows.Forms.DateTimePicker dtToDate;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView grvSearchResult;
-        private System.Windows.Forms.ToolStripMenuItem updateACarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
     }
 }
 

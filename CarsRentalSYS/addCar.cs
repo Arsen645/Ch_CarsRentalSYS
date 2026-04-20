@@ -112,34 +112,6 @@ namespace CarsRentalSYS
             loadCarModels();
 
 
-            //if (cboBrand.SelectedValue == null)
-            //    return; // No brand selected, exit the method
-            //try
-            //{
-            //    OracleConnection conn = Database.OpenConnection();
-
-            //    string query = "SELECT models.ModelID, models.ModelName, brands.BrandName " +
-            //        "FROM CarModels models JOIN CarBrands brands " +
-            //        "ON models.BrandID = brands.BrandID ";
-            //    //+
-            //    //    "WHERE brands.BrandID = :BrandID";
-
-
-            //    OracleCommand cmd = new OracleCommand(query, conn);
-
-            //    OracleDataAdapter da = new OracleDataAdapter(query, conn);
-            //    cmd.Parameters.Add(new OracleParameter("BrandID", cboBrand.SelectedValue ?? 1));
-            //    DataTable dt = new DataTable();
-            //    da.Fill(dt);
-
-            //    cboModel.DataSource = dt;
-            //    cboModel.DisplayMember = "modelname"; // shown to user
-            //    cboModel.ValueMember = "modelid";     // actual ID
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error loading car models: " + ex.Message);
-            //}
         }
 
         private void addCar_Load(object sender, EventArgs e)

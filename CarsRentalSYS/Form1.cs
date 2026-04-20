@@ -271,5 +271,12 @@ namespace CarsRentalSYS
             }
         
         }
+
+        private void logInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            logIn f1 = new logIn();
+            f1.Show();
+            this.Hide();
+        }
     }
 }

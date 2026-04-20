@@ -37,25 +37,25 @@ namespace CarsRentalSYS
             this.Close();
         }
         private void grdCars_CellClick(object sender, DataGridViewCellEventArgs e) { 
-            //object carPlate = grdCars.Rows[grdCars.CurrentCell.RowIndex].Cells[0].Value;
-            List<string> selectedCarPlates = new List<string>();
+            ////object carPlate = grdCars.Rows[grdCars.CurrentCell.RowIndex].Cells[0].Value;
+            //List<string> selectedCarPlates = new List<string>();
 
-            foreach (DataGridViewRow row in grdCars.SelectedRows)
-            {
-                if (row.Cells[0].Value != null)
-                {
-                    selectedCarPlates.Add(row.Cells[0].Value.ToString());
-                }
-            }
+            //foreach (DataGridViewRow row in grdCars.SelectedRows)
+            //{
+            //    if (row.Cells[0].Value != null)
+            //    {
+            //        selectedCarPlates.Add(row.Cells[0].Value.ToString());
+            //    }
+            //}
 
-            if (selectedCarPlates.Count == 0)
-            {
-                MessageBox.Show("Please select one car.");
-                return;
-            }
+            //if (selectedCarPlates.Count == 0)
+            //{
+            //    MessageBox.Show("Please select one car.");
+            //    return;
+            //}
 
-            // Process rental
-            MessageBox.Show("Renting cars:\n" + string.Join(", ", selectedCarPlates));
+            //// Process rental
+            //MessageBox.Show("Renting cars:\n" + string.Join(", ", selectedCarPlates));
         }
 
         private void grdCars_CellContentClick(object sender, DataGridViewCellEventArgs e)

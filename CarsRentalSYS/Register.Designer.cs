@@ -107,9 +107,9 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(341, 281);
+            this.btnRegister.Location = new System.Drawing.Point(172, 239);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(104, 39);
+            this.btnRegister.Size = new System.Drawing.Size(199, 27);
             this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -118,20 +118,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 281);
+            this.label1.Location = new System.Drawing.Point(171, 286);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Already registered:";
+            this.label1.Text = "Have an account?";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(174, 284);
+            this.btnLogin.Location = new System.Drawing.Point(309, 281);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(54, 19);
+            this.btnLogin.Size = new System.Drawing.Size(62, 23);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "log in";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Register
             // 

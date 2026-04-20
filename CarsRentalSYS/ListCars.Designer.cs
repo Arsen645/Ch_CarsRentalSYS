@@ -129,15 +129,15 @@
             this.removeACarToolStripMenuItem.Text = "Remove a car";
             // 
             // rentalsToolStripMenuItem
-            // 
-            this.rentalsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.makeAReservationToolStripMenuItem,
-            this.cancelAReservationToolStripMenuItem,
-            this.cancelAReservationToolStripMenuItem1});
-            this.rentalsToolStripMenuItem.Name = "rentalsToolStripMenuItem";
-            this.rentalsToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.rentalsToolStripMenuItem.Text = "Rentals";
-            // 
+            //// 
+            //this.rentalsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            //this.makeAReservationToolStripMenuItem,
+            //this.cancelAReservationToolStripMenuItem,
+            ////this.cancelAReservationToolStripMenuItem1});
+            //this.rentalsToolStripMenuItem.Name = "rentalsToolStripMenuItem";
+            //this.rentalsToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            //this.rentalsToolStripMenuItem.Text = "Rentals";
+            //// 
             // makeAReservationToolStripMenuItem
             // 
             //this.makeAReservationToolStripMenuItem.Name = "makeAReservationToolStripMenuItem";

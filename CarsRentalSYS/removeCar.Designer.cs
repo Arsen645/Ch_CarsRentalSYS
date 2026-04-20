@@ -50,9 +50,6 @@
             this.repairCostAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grdCarsTable = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCarsTable)).BeginInit();
             this.SuspendLayout();
@@ -215,38 +212,12 @@
             // grdCarsTable
             // 
             this.grdCarsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCarsTable.Location = new System.Drawing.Point(13, 114);
+            this.grdCarsTable.Location = new System.Drawing.Point(13, 84);
             this.grdCarsTable.Name = "grdCarsTable";
-            this.grdCarsTable.Size = new System.Drawing.Size(757, 309);
+            this.grdCarsTable.Size = new System.Drawing.Size(757, 339);
             this.grdCarsTable.TabIndex = 14;
             this.grdCarsTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCarsTable_CellClick);
             this.grdCarsTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCarsTable_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Plate No";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(91, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(276, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 25);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // removeCar
             // 
@@ -255,9 +226,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.grdCarsTable);
             this.Controls.Add(this.menuStrip2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.Name = "removeCar";
             this.Load += new System.EventHandler(this.removeCar_Load);
             this.menuStrip2.ResumeLayout(false);
@@ -291,8 +259,5 @@
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView grdCarsTable;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
     }
 }
