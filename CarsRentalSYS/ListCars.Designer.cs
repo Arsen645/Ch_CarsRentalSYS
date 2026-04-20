@@ -38,7 +38,7 @@
             this.addACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rentalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.makeAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            //this.makeAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelAReservationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -140,9 +140,9 @@
             // 
             // makeAReservationToolStripMenuItem
             // 
-            this.makeAReservationToolStripMenuItem.Name = "makeAReservationToolStripMenuItem";
-            this.makeAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.makeAReservationToolStripMenuItem.Text = "Make a reservation";
+            //this.makeAReservationToolStripMenuItem.Name = "makeAReservationToolStripMenuItem";
+            //this.makeAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            //this.makeAReservationToolStripMenuItem.Text = "Make a reservation";
             // 
             // cancelAReservationToolStripMenuItem
             // 

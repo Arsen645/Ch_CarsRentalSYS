@@ -36,10 +36,6 @@
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rentalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.makeAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelAReservationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerACustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +45,11 @@
             this.showCustomersRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairCostAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelAReservationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.rentalsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rentalsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.carClassesToolStripMenuItem,
             this.carsToolStripMenuItem,
-            this.rentalsToolStripMenuItem,
+            this.rentalsToolStripMenuItem2,
             this.customersToolStripMenuItem,
             this.adminToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -115,35 +115,6 @@
             this.removeACarToolStripMenuItem.Name = "removeACarToolStripMenuItem";
             this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.removeACarToolStripMenuItem.Text = "Remove a car";
-            // 
-            // rentalsToolStripMenuItem
-            // 
-            this.rentalsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.makeAReservationToolStripMenuItem,
-            this.cancelAReservationToolStripMenuItem,
-            this.cancelAReservationToolStripMenuItem1});
-            this.rentalsToolStripMenuItem.Name = "rentalsToolStripMenuItem";
-            this.rentalsToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.rentalsToolStripMenuItem.Text = "Rentals";
-            // 
-            // makeAReservationToolStripMenuItem
-            // 
-            this.makeAReservationToolStripMenuItem.Name = "makeAReservationToolStripMenuItem";
-            this.makeAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.makeAReservationToolStripMenuItem.Text = "Make a reservation";
-            this.makeAReservationToolStripMenuItem.Click += new System.EventHandler(this.makeAReservationToolStripMenuItem_Click);
-            // 
-            // cancelAReservationToolStripMenuItem
-            // 
-            this.cancelAReservationToolStripMenuItem.Name = "cancelAReservationToolStripMenuItem";
-            this.cancelAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.cancelAReservationToolStripMenuItem.Text = "Change a reservation";
-            // 
-            // cancelAReservationToolStripMenuItem1
-            // 
-            this.cancelAReservationToolStripMenuItem1.Name = "cancelAReservationToolStripMenuItem1";
-            this.cancelAReservationToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
-            this.cancelAReservationToolStripMenuItem1.Text = "Cancel a reservation";
             // 
             // customersToolStripMenuItem
             // 
@@ -208,6 +179,18 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // cancelAReservationToolStripMenuItem
+            // 
+            this.cancelAReservationToolStripMenuItem.Name = "cancelAReservationToolStripMenuItem";
+            this.cancelAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.cancelAReservationToolStripMenuItem.Text = "Change a reservation";
+            // 
+            // cancelAReservationToolStripMenuItem1
+            // 
+            this.cancelAReservationToolStripMenuItem1.Name = "cancelAReservationToolStripMenuItem1";
+            this.cancelAReservationToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.cancelAReservationToolStripMenuItem1.Text = "Cancel a reservation";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -217,6 +200,18 @@
             this.label1.Size = new System.Drawing.Size(241, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "No customers in the system";
+            // 
+            // rentalsToolStripMenuItem1
+            // 
+            this.rentalsToolStripMenuItem1.Name = "rentalsToolStripMenuItem1";
+            this.rentalsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.rentalsToolStripMenuItem1.Text = "Rentals";
+            // 
+            // rentalsToolStripMenuItem2
+            // 
+            this.rentalsToolStripMenuItem2.Name = "rentalsToolStripMenuItem2";
+            this.rentalsToolStripMenuItem2.Size = new System.Drawing.Size(57, 20);
+            this.rentalsToolStripMenuItem2.Text = "Rentals";
             // 
             // listCustomers
             // 
@@ -244,7 +239,6 @@
         private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addACarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeACarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem makeAReservationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelAReservationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelAReservationToolStripMenuItem1;
@@ -258,5 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem2;
     }
 }

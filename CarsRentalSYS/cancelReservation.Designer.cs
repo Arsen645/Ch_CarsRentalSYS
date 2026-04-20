@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.carClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setCarTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,28 +50,11 @@
             this.showCustomersRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairCostAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.grdReservations = new System.Windows.Forms.DataGridView();
+            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdReservations)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reservation ID";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(205, 172);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 21);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip2
             // 
@@ -83,7 +64,8 @@
             this.rentalsToolStripMenuItem,
             this.customersToolStripMenuItem,
             this.adminToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.logInToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(800, 24);
@@ -237,39 +219,41 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // comboBox1
+            // grdReservations
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
-            "reservation1",
-            "reservation2"});
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 21);
-            this.comboBox1.TabIndex = 5;
+            this.grdReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdReservations.Location = new System.Drawing.Point(28, 136);
+            this.grdReservations.Name = "grdReservations";
+            this.grdReservations.Size = new System.Drawing.Size(746, 294);
+            this.grdReservations.TabIndex = 6;
+            this.grdReservations.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdReservations_CellContentClick);
+            // 
+            // logInToolStripMenuItem
+            // 
+            this.logInToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.logInToolStripMenuItem.Text = "Log in";
             // 
             // cancelReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.grdReservations);
             this.Controls.Add(this.menuStrip2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.Name = "cancelReservation";
             this.Text = "cancelReservation";
+            this.Load += new System.EventHandler(this.cancelReservation_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdReservations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem carClassesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setCarTypeToolStripMenuItem;
@@ -292,6 +276,7 @@
         private System.Windows.Forms.ToolStripMenuItem showCustomersRateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView grdReservations;
+        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
     }
 }

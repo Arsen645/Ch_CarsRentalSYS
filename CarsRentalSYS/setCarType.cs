@@ -80,17 +80,9 @@ namespace CarsRentalSYS
                 return;
             }
 
-
-            if (!double.TryParse(txtMonthlyRate.Text, out monthlyRate))
-            {
-                MessageBox.Show("Monthly rate must contain only numbers");
-                txtMonthlyRate.Focus();
-                return;
-            }
             carclassId = int.Parse(txtCarClassId.Text);
              name = txtClassName.Text;
              description = txtClassDescription.Text;
-             monthlyRate = double.Parse(txtMonthlyRate.Text);
              //carType = new CarType(carclassId, name, description, monthlyRate);
 
             //CarType aCarType = new CarType(carclassId, txtClassName.Text, txtClassDescription.Text, Convert.ToInt32(txtMonthlyRate.Text));
@@ -98,15 +90,14 @@ namespace CarsRentalSYS
             {
                 OracleConnection conn = Database.OpenConnection();
 
-                string query = "INSERT INTO carclass (CLASSID, CLASSNAME, DESCRIPTION, MONTHLYRATE) " +
-                               "VALUES (:carclassId, :name, :description, :monthlyRate)";
+                string query = "INSERT INTO carclass (CLASSID, CLASSNAME, DESCRIPTION) " +
+                               "VALUES (:carclassId, :name, :description)";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
 
                 cmd.Parameters.Add(":carclassId", carclassId);
                 cmd.Parameters.Add(":name", name);
                 cmd.Parameters.Add(":description", description);
-                cmd.Parameters.Add(":monthlyRate", monthlyRate);
 
                 cmd.ExecuteNonQuery();
 
@@ -114,7 +105,6 @@ namespace CarsRentalSYS
                 //txtCarClassId.Clear();
                 txtClassName.Clear();
                 txtClassDescription.Clear();
-                txtMonthlyRate.Clear();
                 generateCarClassId(); // Generate a new Car Class ID for the next entry
 
 

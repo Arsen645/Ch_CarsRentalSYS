@@ -30,7 +30,6 @@
         {
             this.lblClassName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
-            this.lblMonthlyRate = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.carClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,11 +38,9 @@
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtCarClassId = new System.Windows.Forms.TextBox();
             this.txtClassName = new System.Windows.Forms.TextBox();
             this.txtClassDescription = new System.Windows.Forms.TextBox();
-            this.txtMonthlyRate = new System.Windows.Forms.TextBox();
             this.lblCarClassId = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -65,15 +62,6 @@
             this.lblDescription.Size = new System.Drawing.Size(60, 13);
             this.lblDescription.TabIndex = 6;
             this.lblDescription.Text = "Description";
-            // 
-            // lblMonthlyRate
-            // 
-            this.lblMonthlyRate.AutoSize = true;
-            this.lblMonthlyRate.Location = new System.Drawing.Point(7, 145);
-            this.lblMonthlyRate.Name = "lblMonthlyRate";
-            this.lblMonthlyRate.Size = new System.Drawing.Size(70, 13);
-            this.lblMonthlyRate.TabIndex = 7;
-            this.lblMonthlyRate.Text = "Monthly Rate";
             // 
             // menuStrip2
             // 
@@ -137,15 +125,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(214, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "€";
-            // 
             // txtCarClassId
             // 
             this.txtCarClassId.Location = new System.Drawing.Point(96, 41);
@@ -169,13 +148,6 @@
             this.txtClassDescription.Size = new System.Drawing.Size(115, 20);
             this.txtClassDescription.TabIndex = 16;
             // 
-            // txtMonthlyRate
-            // 
-            this.txtMonthlyRate.Location = new System.Drawing.Point(96, 142);
-            this.txtMonthlyRate.Name = "txtMonthlyRate";
-            this.txtMonthlyRate.Size = new System.Drawing.Size(115, 20);
-            this.txtMonthlyRate.TabIndex = 17;
-            // 
             // lblCarClassId
             // 
             this.lblCarClassId.AutoSize = true;
@@ -191,14 +163,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblCarClassId);
-            this.Controls.Add(this.txtMonthlyRate);
             this.Controls.Add(this.txtClassDescription);
             this.Controls.Add(this.txtClassName);
             this.Controls.Add(this.txtCarClassId);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip2);
-            this.Controls.Add(this.lblMonthlyRate);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.lblClassName);
             this.Name = "setCarType";
@@ -213,7 +182,6 @@
         #endregion
         private System.Windows.Forms.Label lblClassName;
         private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label lblMonthlyRate;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem carClassesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
@@ -222,11 +190,9 @@
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCarClassId;
         private System.Windows.Forms.TextBox txtClassName;
         private System.Windows.Forms.TextBox txtClassDescription;
-        private System.Windows.Forms.TextBox txtMonthlyRate;
         private System.Windows.Forms.Label lblCarClassId;
     }
 }

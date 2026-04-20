@@ -140,14 +140,20 @@
     <Compile Include="listCustomers.Designer.cs">
       <DependentUpon>listCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="makeReservation.cs">
+    <Compile Include="Log in.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="makeReservation.Designer.cs">
-      <DependentUpon>makeReservation.cs</DependentUpon>
+    <Compile Include="Log in.Designer.cs">
+      <DependentUpon>Log in.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="registerCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,7 @@
     <Compile Include="RemoveCarType.Designer.cs">
       <DependentUpon>RemoveCarType.cs</DependentUpon>
     </Compile>
+    <Compile Include="reservations.cs" />
     <Compile Include="setCarType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,9 +224,6 @@
     <EmbeddedResource Include="listCustomers.resx">
       <DependentUpon>listCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="makeReservation.resx">
-      <DependentUpon>makeReservation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -229,6 +233,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="registerCustomer.resx">
       <DependentUpon>registerCustomer.cs</DependentUpon>
     </EmbeddedResource>

@@ -176,8 +176,6 @@
             // 
             this.makeAReservationToolStripMenuItem.Name = "makeAReservationToolStripMenuItem";
             this.makeAReservationToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.makeAReservationToolStripMenuItem.Text = "Make a reservation";
-            this.makeAReservationToolStripMenuItem.Click += new System.EventHandler(this.makeAReservationToolStripMenuItem_Click);
             // 
             // cancelAReservationToolStripMenuItem
             // 

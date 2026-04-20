@@ -30,14 +30,9 @@ namespace CarsRentalSYS
             this.Hide();
         }
 
-        private void makeAReservationToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rentalsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            makeReservation f1 = new makeReservation();
-            f1.Show();
-            this.Hide();
+
         }
-
-
-
     }
 }
