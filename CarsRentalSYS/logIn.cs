@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -59,7 +60,11 @@ namespace CarsRentalSYS
                     string password = result.ToString();
                     if (password == txtPassword.Text.Trim())
                     {
+
                         MessageBox.Show("Login successful");
+
+                        Global.Email = txtEmail.Text.Trim();
+                        Global.CustomerId = GetCustomerIdByEmail(txtEmail.Text.Trim());
                         Form1 menu = new Form1();
                         menu.Show();
                         this.Close();
@@ -80,6 +85,29 @@ namespace CarsRentalSYS
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
+
+
+        }
+
+        private int GetCustomerIdByEmail(string email)
+        {
+            try
+            {
+                OracleConnection conn = Database.OpenConnection();
+                string query = "SELECT customerid FROM customers WHERE email = :EMAIL";
+                OracleCommand cmd = new OracleCommand(query, conn);
+                cmd.Parameters.Add(":EMAIL", email);
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    return Convert.ToInt32(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving customer ID: " + ex.Message);
+            }
+            return 0; // Return 0 or an appropriate default value if not found
         }
     }
 }

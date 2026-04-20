@@ -18,7 +18,7 @@ namespace CarsRentalSYS
         {
             InitializeComponent();
         }
-        int customerId = 1;
+        int customerId = Global.CustomerId;
         DateTime startDate;
         DateTime finishDate;
         int rentalId = 1;
@@ -69,12 +69,7 @@ namespace CarsRentalSYS
             this.Hide();
         }
 
-        private void cancelAReservationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            changeReservation f1 = new changeReservation();
-            f1.Show();
-            this.Hide();
-        }
+        
 
         private void cancelAReservationToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -83,12 +78,7 @@ namespace CarsRentalSYS
             this.Hide();
         }
 
-        private void registerACustomerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            registerCustomer f1 = new registerCustomer();
-            f1.Show();
-            this.Hide();
-        }
+        
 
         private void updateCustomerInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -109,19 +99,9 @@ namespace CarsRentalSYS
             this.Hide();
         }
 
-        private void showCustomersRateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showCustomerRates f1 = new showCustomerRates();
-            f1.Show();
-            this.Hide();
-        }
+        
 
-        private void repairCostAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            generateInvoice f1 = new generateInvoice();
-            f1.Show();
-            this.Hide();
-        }
+       
 
         private void listCustomersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -130,12 +110,7 @@ namespace CarsRentalSYS
             this.Hide();
         }
 
-        private void btnViewCars_Click(object sender, EventArgs e)
-        {
-            ListCars f1 = new ListCars();
-            f1.Show();
-            this.Hide();
-        }
+       
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

@@ -23,16 +23,8 @@ namespace CarsRentalSYS
             menu.Show();
             this.Close();
         }
-        private void showCustomersRateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            showCustomerRates f1 = new showCustomerRates();
-            f1.Show();
-            this.Hide();
-        }
+        
 
-        private void rentalsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

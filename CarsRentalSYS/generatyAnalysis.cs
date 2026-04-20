@@ -28,5 +28,10 @@ namespace CarsRentalSYS
         {
             MessageBox.Show("Analysis downloaded");
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -94,6 +94,9 @@ namespace CarsRentalSYS
                 txtPhone.Clear();
                 txtPassword.Clear();
 
+                Global.Email = txtEmail.Text.Trim();
+                Global.CustomerId = GetCustomerIdByEmail(txtEmail.Text.Trim());
+
                 Form1 menu = new Form1();
                 menu.Show();
                 this.Close();
@@ -111,6 +114,27 @@ namespace CarsRentalSYS
             logIn menu = new logIn();
             menu.Show();
             this.Close();
+        }
+
+        private int GetCustomerIdByEmail(string email)
+        {
+            try
+            {
+                OracleConnection conn = Database.OpenConnection();
+                string query = "SELECT customerid FROM customers WHERE email = :EMAIL";
+                OracleCommand cmd = new OracleCommand(query, conn);
+                cmd.Parameters.Add(":EMAIL", email);
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    return Convert.ToInt32(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving customer ID: " + ex.Message);
+            }
+            return 0; // Return 0 or an appropriate default value if not found
         }
     }
 }

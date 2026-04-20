@@ -102,12 +102,6 @@
     <Compile Include="changeCarType.Designer.cs">
       <DependentUpon>changeCarType.cs</DependentUpon>
     </Compile>
-    <Compile Include="changeReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="changeReservation.Designer.cs">
-      <DependentUpon>changeReservation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Form1.cs">
@@ -116,24 +110,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="generateInvoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="generateInvoice.Designer.cs">
-      <DependentUpon>generateInvoice.cs</DependentUpon>
-    </Compile>
     <Compile Include="generatyAnalysis.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="generatyAnalysis.Designer.cs">
       <DependentUpon>generatyAnalysis.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListCars.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListCars.Designer.cs">
-      <DependentUpon>ListCars.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="listCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,12 +137,6 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="registerCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="registerCustomer.Designer.cs">
-      <DependentUpon>registerCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="removeCar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,12 +155,6 @@
     </Compile>
     <Compile Include="setCarType.Designer.cs">
       <DependentUpon>setCarType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="showCustomerRates.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="showCustomerRates.Designer.cs">
-      <DependentUpon>showCustomerRates.cs</DependentUpon>
     </Compile>
     <Compile Include="updateCar.cs">
       <SubType>Form</SubType>
@@ -206,20 +177,11 @@
     <EmbeddedResource Include="changeCarType.resx">
       <DependentUpon>changeCarType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="changeReservation.resx">
-      <DependentUpon>changeReservation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="generateInvoice.resx">
-      <DependentUpon>generateInvoice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="generatyAnalysis.resx">
       <DependentUpon>generatyAnalysis.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListCars.resx">
-      <DependentUpon>ListCars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="listCustomers.resx">
       <DependentUpon>listCustomers.cs</DependentUpon>
@@ -239,9 +201,6 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="registerCustomer.resx">
-      <DependentUpon>registerCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="removeCar.resx">
       <DependentUpon>removeCar.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,9 +209,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="setCarType.resx">
       <DependentUpon>setCarType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="showCustomerRates.resx">
-      <DependentUpon>showCustomerRates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateCar.resx">
       <DependentUpon>updateCar.cs</DependentUpon>
