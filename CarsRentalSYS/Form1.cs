@@ -80,12 +80,7 @@ namespace CarsRentalSYS
 
         
 
-        private void updateCustomerInformationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            updateCustomer f1 = new updateCustomer();
-            f1.Show();
-            this.Hide();
-        }
+        
 
         private void yearlyRToolStripMenuItem_Click(object sender, EventArgs e)
         {

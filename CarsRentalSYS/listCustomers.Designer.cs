@@ -211,6 +211,7 @@
             this.grdCustomers.Name = "grdCustomers";
             this.grdCustomers.Size = new System.Drawing.Size(782, 390);
             this.grdCustomers.TabIndex = 7;
+            this.grdCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCustomers_CellContentClick);
             // 
             // listCustomers
             // 
@@ -221,6 +222,7 @@
             this.Controls.Add(this.menuStrip2);
             this.Name = "listCustomers";
             this.Text = "listCustomers";
+            this.Load += new System.EventHandler(this.listCustomers_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).EndInit();

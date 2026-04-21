@@ -47,7 +47,6 @@
             this.cancelAReservationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateCustomerInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carDamageAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -133,21 +132,21 @@
             // setCarTypeToolStripMenuItem
             // 
             this.setCarTypeToolStripMenuItem.Name = "setCarTypeToolStripMenuItem";
-            this.setCarTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.setCarTypeToolStripMenuItem.Text = "Set Car Type";
             this.setCarTypeToolStripMenuItem.Click += new System.EventHandler(this.setCarTypeToolStripMenuItem_Click);
             // 
             // changeCarTypeToolStripMenuItem
             // 
             this.changeCarTypeToolStripMenuItem.Name = "changeCarTypeToolStripMenuItem";
-            this.changeCarTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changeCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.changeCarTypeToolStripMenuItem.Text = "Change Car Type";
             this.changeCarTypeToolStripMenuItem.Click += new System.EventHandler(this.changeCarTypeToolStripMenuItem_Click);
             // 
             // removeCarTypeToolStripMenuItem
             // 
             this.removeCarTypeToolStripMenuItem.Name = "removeCarTypeToolStripMenuItem";
-            this.removeCarTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.removeCarTypeToolStripMenuItem.Text = "Remove Car Type";
             this.removeCarTypeToolStripMenuItem.Click += new System.EventHandler(this.removeCarTypeToolStripMenuItem_Click);
             // 
@@ -192,8 +191,7 @@
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listCustomersToolStripMenuItem,
-            this.updateCustomerInformationToolStripMenuItem});
+            this.listCustomersToolStripMenuItem});
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
             this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.customersToolStripMenuItem.Text = "Customers";
@@ -201,16 +199,9 @@
             // listCustomersToolStripMenuItem
             // 
             this.listCustomersToolStripMenuItem.Name = "listCustomersToolStripMenuItem";
-            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listCustomersToolStripMenuItem.Text = "List customers";
             this.listCustomersToolStripMenuItem.Click += new System.EventHandler(this.listCustomersToolStripMenuItem_Click);
-            // 
-            // updateCustomerInformationToolStripMenuItem
-            // 
-            this.updateCustomerInformationToolStripMenuItem.Name = "updateCustomerInformationToolStripMenuItem";
-            this.updateCustomerInformationToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.updateCustomerInformationToolStripMenuItem.Text = "Update customer information";
-            this.updateCustomerInformationToolStripMenuItem.Click += new System.EventHandler(this.updateCustomerInformationToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
@@ -300,7 +291,6 @@
         private System.Windows.Forms.ToolStripMenuItem cancelAReservationToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listCustomersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateCustomerInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carDamageAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
