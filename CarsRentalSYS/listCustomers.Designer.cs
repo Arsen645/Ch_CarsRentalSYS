@@ -36,6 +36,7 @@
             this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rentalsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerACustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,10 +48,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelAReservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelAReservationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.rentalsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.rentalsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.grdCustomers = new System.Windows.Forms.DataGridView();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -115,6 +116,12 @@
             this.removeACarToolStripMenuItem.Name = "removeACarToolStripMenuItem";
             this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.removeACarToolStripMenuItem.Text = "Remove a car";
+            // 
+            // rentalsToolStripMenuItem2
+            // 
+            this.rentalsToolStripMenuItem2.Name = "rentalsToolStripMenuItem2";
+            this.rentalsToolStripMenuItem2.Size = new System.Drawing.Size(57, 20);
+            this.rentalsToolStripMenuItem2.Text = "Rentals";
             // 
             // customersToolStripMenuItem
             // 
@@ -191,39 +198,32 @@
             this.cancelAReservationToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
             this.cancelAReservationToolStripMenuItem1.Text = "Cancel a reservation";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "No customers in the system";
-            // 
             // rentalsToolStripMenuItem1
             // 
             this.rentalsToolStripMenuItem1.Name = "rentalsToolStripMenuItem1";
             this.rentalsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.rentalsToolStripMenuItem1.Text = "Rentals";
             // 
-            // rentalsToolStripMenuItem2
+            // grdCustomers
             // 
-            this.rentalsToolStripMenuItem2.Name = "rentalsToolStripMenuItem2";
-            this.rentalsToolStripMenuItem2.Size = new System.Drawing.Size(57, 20);
-            this.rentalsToolStripMenuItem2.Text = "Rentals";
+            this.grdCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCustomers.Location = new System.Drawing.Point(8, 43);
+            this.grdCustomers.Name = "grdCustomers";
+            this.grdCustomers.Size = new System.Drawing.Size(782, 390);
+            this.grdCustomers.TabIndex = 7;
             // 
             // listCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grdCustomers);
             this.Controls.Add(this.menuStrip2);
-            this.Controls.Add(this.label1);
             this.Name = "listCustomers";
             this.Text = "listCustomers";
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCustomers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,8 +251,8 @@
         private System.Windows.Forms.ToolStripMenuItem showCustomersRateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem2;
+        private System.Windows.Forms.DataGridView grdCustomers;
     }
 }
