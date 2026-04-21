@@ -47,24 +47,23 @@ namespace CarsRentalSYS
             {
                 OracleConnection conn = Database.OpenConnection();
 
-                string query = "SELECT password FROM customers WHERE email = :EMAIL";
+                string query = "SELECT customerid, password FROM customers WHERE email = :EMAIL";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
 
                 cmd.Parameters.Add(":EMAIL", txtEmail.Text.Trim());
 
-
-                object result = cmd.ExecuteScalar();
-                if (result != null)
+                OracleDataReader result = cmd.ExecuteReader();
+                if (result.Read())
                 {
-                    string password = result.ToString();
+                    string password = result["password"].ToString();
                     if (password == txtPassword.Text.Trim())
                     {
 
                         MessageBox.Show("Login successful");
 
                         Global.Email = txtEmail.Text.Trim();
-                        Global.CustomerId = GetCustomerIdByEmail(txtEmail.Text.Trim());
+                        Global.CustomerId = Convert.ToInt32(result["customerid"]);
                         Form1 menu = new Form1();
                         menu.Show();
                         this.Close();

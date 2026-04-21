@@ -133,27 +133,27 @@ namespace CarsRentalSYS
                          JOIN carbrands ON cars.brandID = carbrands.brandID
                          WHERE cars.Status != 'D'
                          AND (
-                            cars.PlateNo LIKE :search OR
+                            UPPER(cars.PlateNo) LIKE :search OR
                             cars.BrandID LIKE :search OR
                             carmodels.Modelname LIKE :search OR
-                            carbrands.Brandname LIKE :search OR
+                            UPPER(carbrands.Brandname) LIKE :search OR
                             cars.YearOfManufacture LIKE :search OR
-                            carclass.Description LIKE :search OR
-                            carclass.ClassName LIKE :search
+                            UPPER(carclass.Description) LIKE :search OR
+                            UPPER(carclass.ClassName) LIKE :search
                          )
                          AND NOT EXISTS (
                             SELECT *
                             FROM rentals
                             WHERE rentals.CarPlateNo = cars.PlateNo
-                            AND rentals.StartDate < :finishDate
-                            AND rentals.FinishDate > :startDate
+                            AND rentals.StartDate <= :finishDate
+                            AND rentals.FinishDate >= :startDate
                          )";
 
             OracleCommand cmd = new OracleCommand(query, conn);
 
                 cmd.BindByName = true;
-
-                cmd.Parameters.Add(":search", "%" + txtMainSearch.Text + "%");
+                string searchTerm = txtMainSearch.Text.ToUpper();
+                cmd.Parameters.Add(":search", "%" + searchTerm + "%");
             cmd.Parameters.Add(":startDate", startDate);
             cmd.Parameters.Add(":finishDate", finishDate);
                 

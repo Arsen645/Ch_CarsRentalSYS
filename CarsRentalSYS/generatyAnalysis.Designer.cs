@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -52,21 +55,19 @@
             this.showCustomersRateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repairCostAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chtData = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtData)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Cars revenue analysis",
-            "Cars damage analysis",
-            "Repair cost analysis"});
-            this.comboBox1.Location = new System.Drawing.Point(89, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Location = new System.Drawing.Point(89, 36);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(145, 21);
+            this.cmbType.TabIndex = 1;
+            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -79,7 +80,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(235, 163);
+            this.button1.Location = new System.Drawing.Point(290, 39);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 22);
             this.button1.TabIndex = 7;
@@ -242,19 +243,38 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // chtData
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chtData.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtData.Legends.Add(legend2);
+            this.chtData.Location = new System.Drawing.Point(34, 100);
+            this.chtData.Name = "chtData";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtData.Series.Add(series2);
+            this.chtData.Size = new System.Drawing.Size(691, 311);
+            this.chtData.TabIndex = 9;
+            this.chtData.Text = "chart1";
+            // 
             // generatyAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chtData);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbType);
             this.Name = "generatyAnalysis";
             this.Text = "generatyAnalysis";
+            this.Load += new System.EventHandler(this.load_analysis);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,7 +282,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip2;
@@ -286,5 +306,6 @@
         private System.Windows.Forms.ToolStripMenuItem showCustomersRateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem repairCostAnalysisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtData;
     }
 }

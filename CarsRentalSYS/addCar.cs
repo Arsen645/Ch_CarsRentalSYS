@@ -71,6 +71,7 @@ namespace CarsRentalSYS
                 // actual ID
                 loadCarModels();
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading car brands: " + ex.Message);
@@ -156,12 +157,28 @@ namespace CarsRentalSYS
                 
                 txtYear.Clear();
                 txtPlateNumber.Clear();
+                txtPrice.Clear();
+                txtPlateNumber.Focus();
 
-
+            }
+            catch (OracleException ex)
+            {
+                if (ex.Number == 1) // ORA-00001
+                {
+                    MessageBox.Show("This car already exists (duplicate plate).");
+                    txtPlateNumber.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Oracle error: " + ex.Message);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error one: " + ex.Message);
+                
+                
+                    MessageBox.Show("Database error: " + ex.Message);
+                
             }
         }
 

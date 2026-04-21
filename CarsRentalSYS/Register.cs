@@ -103,6 +103,18 @@ namespace CarsRentalSYS
 
 
             }
+            catch (OracleException ex)
+            {
+                if (ex.Number == 1) // ORA-00001
+                {
+                    MessageBox.Show("This Email already registered.");
+                    txtEmail.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Oracle error: " + ex.Message);
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error one: " + ex.Message);

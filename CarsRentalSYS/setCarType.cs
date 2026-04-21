@@ -18,9 +18,7 @@ namespace CarsRentalSYS
     {
         String name;
         String description;
-        double monthlyRate; 
         int carclassId;
-        CarType carType;
         public setCarType()
         {
             InitializeComponent();
@@ -81,7 +79,7 @@ namespace CarsRentalSYS
             }
 
             carclassId = int.Parse(txtCarClassId.Text);
-             name = txtClassName.Text;
+             name = txtClassName.Text.ToUpper();
              description = txtClassDescription.Text;
              //carType = new CarType(carclassId, name, description, monthlyRate);
 
@@ -109,6 +107,18 @@ namespace CarsRentalSYS
 
 
             }
+            //catch (OracleException ex)
+            //{
+            //    if (ex.Number == 1) 
+            //    {
+            //        MessageBox.Show("This car class already exists. Change the name");
+            //        txtClassName.Focus();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Oracle error: " + ex.Message);
+            //    }
+            //}
             catch (Exception ex)
             {
                 MessageBox.Show("Error one: " + ex.Message);
