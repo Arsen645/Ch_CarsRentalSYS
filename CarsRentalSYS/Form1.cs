@@ -22,6 +22,10 @@ namespace CarsRentalSYS
         DateTime startDate;
         DateTime finishDate;
         int rentalId = 1;
+        string plateNo = "";
+        int days;
+        int pricePerDay;
+        int totalPrice;
         private void form1_Load(object sender, EventArgs e)
         {
 
@@ -114,8 +118,14 @@ namespace CarsRentalSYS
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            
             startDate = dtFromDate.Value;
             finishDate = dtToDate.Value;
+            if (!(startDate <= finishDate))
+            {
+                MessageBox.Show("Finish date must be after start date");
+                return;
+            }
             try { 
                 OracleConnection conn = Database.OpenConnection();
             
@@ -158,7 +168,15 @@ namespace CarsRentalSYS
                 grvSearchResult.DataSource = dt;
                 grvSearchResult.Columns["MODELID"].Visible = false;
                 grvSearchResult.Columns["brandID"].Visible = false;
-
+                if (!grvSearchResult.Columns.Contains("btnAdd"))
+                {
+                    DataGridViewButtonColumn btnAdd = new DataGridViewButtonColumn();
+                    btnAdd.HeaderText = "Add";
+                    btnAdd.Text = "Add";
+                    btnAdd.UseColumnTextForButtonValue = true;
+                    btnAdd.Name = "btnAdd";
+                    grvSearchResult.Columns.Add(btnAdd);
+                }
             }
             catch (Exception ex)
             {
@@ -179,66 +197,42 @@ namespace CarsRentalSYS
 
             DataGridViewRow row = grvSearchResult.Rows[e.RowIndex];
 
-            string plateNo = row.Cells["PLATENO"].Value.ToString();
-            int pricePerDay = Convert.ToInt32(row.Cells["PRICEPERDAY"].Value);
-            int days = (finishDate.Date - startDate.Date).Days + 1;
-            int totalPrice = days * pricePerDay;
-
-            var confirmResult = MessageBox.Show(
-    $"Car: {plateNo}\n" +
-    $"Days: {days}\n" +
-    $"Price per day: €{pricePerDay}\n" +
-    $"Total price: €{totalPrice}\n\n" +
-    "Confirm rental?",
-    "Confirm Rental",
-    MessageBoxButtons.YesNo,
-    MessageBoxIcon.Question
-);
-    
-
-            if (confirmResult != DialogResult.Yes)
-                return;
-            try
+            if (row.Cells[0].Value != null)
             {
-                //////////////
-                using (OracleConnection conn = Database.OpenConnection())
+
+
+
+                if (grvSearchResult.Columns[e.ColumnIndex].Name == "btnAdd")
                 {
-                    string query = @" INSERT INTO Rentals 
-                             (CUSTOMERID, STARTDATE, FINISHDATE, CARPLATENO, RENTID)
-                             VALUES (:custId, :startDate, :finishDate, :plateNo, rental_seq.NEXTVAL)";
+                    plateNo = row.Cells["PLATENO"].Value.ToString();
+                    pricePerDay = Convert.ToInt32(row.Cells["PRICEPERDAY"].Value);
+                    days = (finishDate.Date - startDate.Date).Days + 1;
+                    totalPrice = days * pricePerDay;
 
-                    OracleCommand cmd = new OracleCommand(query, conn);
+                    var confirmResult = MessageBox.Show(
+            $"Car: {plateNo}\n" +
+            $"Days: {days}\n" +
+            $"Price per day: €{pricePerDay}\n" +
+            $"Total price: €{totalPrice}\n\n" +
+            "Confirm rental?",
+            "Confirm Rental",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
 
-                    //cmd.Parameters.Add(":rentid", rental_seq.NEXTVAL);
-                    cmd.Parameters.Add(":custId", customerId);
-                    cmd.Parameters.Add(":startDate", startDate);
-                    cmd.Parameters.Add(":finishDate", finishDate);
-                    cmd.Parameters.Add(":plateNo", plateNo);
-
-                    cmd.ExecuteNonQuery();
-
-                    //string sql = @" INSERT INTO PAYMENTRECEIPTS 
-                    //         (PAYMENTID, RENTID, AMOUNT, PAYMENTDATE)
-                    //         VALUES (rental_seq.NEXTVAL, rental_seq.NEXTVAL, :amount, :date, )";
-
-                    //OracleCommand cmd1 = new OracleCommand(query, conn);
-
-                    ////cmd.Parameters.Add(":rentid", rentalId);
-                    //cmd.Parameters.Add(":custId", customerId);
-                    //cmd.Parameters.Add(":startDate", startDate);
-                    //cmd.Parameters.Add(":finishDate", finishDate);
-                    //cmd.Parameters.Add(":plateNo", plateNo);
-
-                    //cmd.ExecuteNonQuery();
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        add(plateNo);
+                    }
+                    else
+                    {
+                        return;
+                    }
 
                 }
-
-                MessageBox.Show("Rental created successfully!");
+                ////////////
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+        
+     
         
         }
 
@@ -247,6 +241,32 @@ namespace CarsRentalSYS
             logIn f1 = new logIn();
             f1.Show();
             this.Hide();
+        }
+
+        private void add(string plateNo)
+        {
+            try
+            {
+                using (OracleConnection conn = Database.OpenConnection())
+                {
+                    string query = @" INSERT INTO Rentals 
+                             (CUSTOMERID, STARTDATE, FINISHDATE, CARPLATENO, RENTID)
+                             VALUES (:custId, :startDate, :finishDate, :plateNo, rental_seq.NEXTVAL)";
+                    OracleCommand cmd = new OracleCommand(query, conn);
+                    //cmd.Parameters.Add(":rentid", rental_seq.NEXTVAL);
+                    cmd.BindByName = true;
+                    cmd.Parameters.Add(":custId", customerId);
+                    cmd.Parameters.Add(":startDate", startDate);
+                    cmd.Parameters.Add(":finishDate", finishDate);
+                    cmd.Parameters.Add(":plateNo", plateNo);
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Rental created successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

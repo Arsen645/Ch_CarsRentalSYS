@@ -72,21 +72,24 @@ namespace CarsRentalSYS
                 OracleConnection conn = Database.OpenConnection();
 
                 string query = "Update Customers SET CUSTOMERNAME = :cCUSTOMERNAME, " +
-                    "PHONE = :cPHONE, PASSWORD = :cPASSWORD " +
-                    "Where EMAIL = :cEMAIL";
+                    "EMAIL = :cEMAIL, PHONE = :cPHONE, PASSWORD = :cPASSWORD " +
+                    $"Where CUSTOMERID = {id}";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
 
-                //cmd.Parameters.Add(":cCUSTOMERID", id.ToString());
+                //cmd.Parameters.Add(":cCUSTOMERID", Convert.ToInt32(id));
                 cmd.Parameters.Add(":cCUSTOMERNAME", txtName.Text);
                 cmd.Parameters.Add(":cEMAIL", txtEmail.Text);
                 cmd.Parameters.Add(":cPHONE", txtPhone.Text);
                 cmd.Parameters.Add(":cPASSWORD", txtPassword.Text);
 
-
                 cmd.ExecuteNonQuery();
+                int rows = cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Updated successfully");
+                if (rows > 0)
+                    MessageBox.Show("Updated successfully");
+                else
+                    MessageBox.Show("No record found to update.");
 
             }
             catch (Exception ex)

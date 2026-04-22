@@ -92,31 +92,28 @@ namespace CarsRentalSYS
             {
                 OracleConnection conn = Database.OpenConnection();
 
-                string query = "DELETE FROM Customers WHERE Customerid = :Customerid";
+                string query = $"DELETE FROM Customers WHERE Customerid = :Customerid";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
 
-                cmd.Parameters.Add(":Customerid", grdCustomers.Rows[grdCustomers.CurrentCell.RowIndex].Cells[0].Value);
+                cmd.Parameters.Add(":Customerid", grdCustomers.Rows[grdCustomers.CurrentCell.RowIndex].Cells["CUSTOMERID"].Value);
 
                 cmd.ExecuteNonQuery();
 
-
+                MessageBox.Show("Customer Removed");
 
             }
             catch (OracleException ex)
             {
-                if (ex.Number == 2292)
-                {
-                    Console.WriteLine("Cannot delete this record because related records exist.");
-                    // optionally show a user-friendly message
-                }
+
+                MessageBox.Show("Cannot delete this record because related records exist. (Rentals table)");
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error one: " + ex.Message);
             }
             grdCustomers.DataSource = Customer.GetAllProducts().Tables[0];
-            MessageBox.Show("Customer Removed");
         }
     }
 }

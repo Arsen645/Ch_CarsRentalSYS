@@ -112,9 +112,9 @@
             // grvSearchResult
             // 
             this.grvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvSearchResult.Location = new System.Drawing.Point(46, 236);
+            this.grvSearchResult.Location = new System.Drawing.Point(27, 236);
             this.grvSearchResult.Name = "grvSearchResult";
-            this.grvSearchResult.Size = new System.Drawing.Size(815, 262);
+            this.grvSearchResult.Size = new System.Drawing.Size(858, 262);
             this.grvSearchResult.TabIndex = 10;
             this.grvSearchResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSearchResult_CellContentClick);
             // 
@@ -199,7 +199,7 @@
             // listCustomersToolStripMenuItem
             // 
             this.listCustomersToolStripMenuItem.Name = "listCustomersToolStripMenuItem";
-            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.listCustomersToolStripMenuItem.Text = "List customers";
             this.listCustomersToolStripMenuItem.Click += new System.EventHandler(this.listCustomersToolStripMenuItem_Click);
             // 
