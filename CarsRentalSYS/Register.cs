@@ -107,7 +107,7 @@ namespace CarsRentalSYS
             {
                 if (ex.Number == 1) // ORA-00001
                 {
-                    MessageBox.Show("This Email already registered.");
+                    MessageBox.Show("Email or Phonealready registered.");
                     txtEmail.Focus();
                 }
                 else
