@@ -64,9 +64,9 @@ namespace CarsRentalSYS
 
                         Global.Email = txtEmail.Text.Trim();
                         Global.CustomerId = Convert.ToInt32(result["customerid"]);
-                        Form1 menu = new Form1();
-                        menu.Show();
-                        this.Close();
+                        Form1 main = new Form1();
+                        main.Show();
+                        this.Hide();
                         return;
                     }
 
