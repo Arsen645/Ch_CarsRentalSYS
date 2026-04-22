@@ -270,5 +270,10 @@ namespace CarsRentalSYS
                 MessageBox.Show("Error loading car rental days analysis: " + ex.Message);
             }
         }
+
+        private void chtData_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,11 +31,6 @@
             this.lblClassName = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.carClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rentalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.txtCarClassId = new System.Windows.Forms.TextBox();
@@ -66,11 +61,6 @@
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carClassesToolStripMenuItem,
-            this.carsToolStripMenuItem,
-            this.rentalsToolStripMenuItem,
-            this.customersToolStripMenuItem,
-            this.adminToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -78,41 +68,11 @@
             this.menuStrip2.TabIndex = 8;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // carClassesToolStripMenuItem
-            // 
-            this.carClassesToolStripMenuItem.Name = "carClassesToolStripMenuItem";
-            this.carClassesToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.carClassesToolStripMenuItem.Text = "Car Classes";
-            // 
-            // carsToolStripMenuItem
-            // 
-            this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
-            this.carsToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.carsToolStripMenuItem.Text = "Cars";
-            // 
-            // rentalsToolStripMenuItem
-            // 
-            this.rentalsToolStripMenuItem.Name = "rentalsToolStripMenuItem";
-            this.rentalsToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.rentalsToolStripMenuItem.Text = "Rentals";
-            // 
-            // customersToolStripMenuItem
-            // 
-            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.customersToolStripMenuItem.Text = "Customers";
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.adminToolStripMenuItem.Text = "Admin";
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.exitToolStripMenuItem.Text = "Home";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // button1
@@ -183,11 +143,6 @@
         private System.Windows.Forms.Label lblClassName;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem carClassesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtCarClassId;

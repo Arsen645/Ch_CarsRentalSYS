@@ -80,9 +80,9 @@
             // 
             // txtMainSearch
             // 
-            this.txtMainSearch.Location = new System.Drawing.Point(47, 191);
+            this.txtMainSearch.Location = new System.Drawing.Point(101, 191);
             this.txtMainSearch.Name = "txtMainSearch";
-            this.txtMainSearch.Size = new System.Drawing.Size(346, 20);
+            this.txtMainSearch.Size = new System.Drawing.Size(292, 20);
             this.txtMainSearch.TabIndex = 6;
             // 
             // dtFromDate

@@ -77,7 +77,6 @@ namespace CarsRentalSYS
                 cboModel.ValueMember = "MODELID";
 
                 cboPlate.SelectedValue = plateNo;
-                txtPrice.Text = ""; // Clear price field for new selection
             }
             catch (Exception ex)
             {
@@ -147,10 +146,11 @@ namespace CarsRentalSYS
             try
             {
                 int year = txtYear.Text != "" ? int.Parse(txtYear.Text) : 0;
+                price = txtPrice.Text != "" ? int.Parse(txtPrice.Text) : 0;
                 OracleConnection conn = Database.OpenConnection();
 
                 string query = "UPDATE cars SET YEAROFMANUFACTURE = :year, " +
-                    "CARCLASSID = :class, BRANDID = :brand, MODELID = :model, PRICEPERDAY = :price " +
+                    "CARCLASSID = :class, BRANDID = :brand, MODELID = :model, PRICEPERDAY = :cprice " +
                                 "WHERE PLATENO = :plate";
 
                 OracleCommand cmd = new OracleCommand(query, conn);
@@ -168,19 +168,23 @@ namespace CarsRentalSYS
                 cmd.Parameters.Add(":plate", OracleDbType.Varchar2)
               .Value = cboPlate.Text;
                 cmd.Parameters.Add(":year", year);
-                cmd.Parameters.Add(":price", price);
+                cmd.Parameters.Add(":cprice", price);
                 //conn.Open();
                 cmd.ExecuteNonQuery();
                 //int rows = cmd.ExecuteNonQuery();
                 conn.Close();
 
                 MessageBox.Show("Car class updated successfully");
-                updateCar_Load(sender, e); // Refresh the combo box to show updated data
+                updateCar_Load(sender, e);
+                // Refresh the combo box to show updated data
+                return;
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+            MessageBox.Show("Nothing was updated.");
         }
 
         private void label1_Click(object sender, EventArgs e)
