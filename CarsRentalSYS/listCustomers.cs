@@ -45,7 +45,7 @@ namespace CarsRentalSYS
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 menu = new Form1();
+            adminHome menu = new adminHome();
             menu.Show();
             this.Close();
         }

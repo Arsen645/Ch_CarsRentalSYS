@@ -90,6 +90,12 @@
     <Compile Include="addCar.Designer.cs">
       <DependentUpon>addCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="adminHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminHome.Designer.cs">
+      <DependentUpon>adminHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="cancelReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </Compile>
     <EmbeddedResource Include="addCar.resx">
       <DependentUpon>addCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminHome.resx">
+      <DependentUpon>adminHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cancelReservation.resx">
       <DependentUpon>cancelReservation.cs</DependentUpon>

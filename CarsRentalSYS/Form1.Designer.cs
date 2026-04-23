@@ -228,8 +228,8 @@
             // 
             this.logInToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.logInToolStripMenuItem.Text = "Log In";
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.logInToolStripMenuItem.Text = "Log out";
             this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
             // 
             // menuStrip2
@@ -263,6 +263,7 @@
             this.Controls.Add(this.menuStrip2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).EndInit();
             this.menuStrip2.ResumeLayout(false);

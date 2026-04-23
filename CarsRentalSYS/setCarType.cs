@@ -57,16 +57,22 @@ namespace CarsRentalSYS
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 menu=new Form1();
+            adminHome menu =new adminHome();
             menu.Show();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtClassName.Text.Any(char.IsDigit))
+            if (!txtClassName.Text.Any(char.IsLetter))
             {
-                MessageBox.Show("Class name must not contain numbers");
+                MessageBox.Show("Class name must contain only letters");
+                txtClassName.Focus();
+                return;
+            }
+            if (txtClassName.Text.Length > 6 || string.IsNullOrEmpty(txtClassName.Text))
+            {
+                MessageBox.Show("Class name must be between 1 and 6 characters long");
                 txtClassName.Focus();
                 return;
             }
@@ -107,18 +113,18 @@ namespace CarsRentalSYS
 
 
             }
-            //catch (OracleException ex)
-            //{
-            //    if (ex.Number == 1) 
-            //    {
-            //        MessageBox.Show("This car class already exists. Change the name");
-            //        txtClassName.Focus();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Oracle error: " + ex.Message);
-            //    }
-            //}
+            catch (OracleException ex)
+            {
+                if (ex.Number == 1)
+                {
+                    MessageBox.Show("This car class already exists. Change the name");
+                    txtClassName.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Name or description is not valid. Max length exceeded.");
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error one: " + ex.Message);

@@ -64,6 +64,13 @@ namespace CarsRentalSYS
 
                         Global.Email = txtEmail.Text.Trim();
                         Global.CustomerId = Convert.ToInt32(result["customerid"]);
+                        if (Global.CustomerId == 0) //  customerid 0 is the admin
+                        {
+                            adminHome adminPanel = new adminHome();
+                            adminPanel.Show();
+                            this.Hide();
+                            return;
+                        }
                         Form1 main = new Form1();
                         main.Show();
                         this.Hide();

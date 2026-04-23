@@ -40,6 +40,7 @@ namespace CarsRentalSYS
         private void setCarTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+
             setCarType f1 = new setCarType();
             f1.Show();
             this.Hide();
@@ -267,6 +268,11 @@ namespace CarsRentalSYS
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
