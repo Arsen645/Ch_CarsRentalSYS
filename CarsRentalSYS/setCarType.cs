@@ -122,7 +122,8 @@ namespace CarsRentalSYS
                 }
                 else
                 {
-                    MessageBox.Show("Name or description is not valid. Max length exceeded.");
+                    MessageBox.Show("Name or description is not valid. Max" +
+                        " length exceeded.");
                 }
             }
             catch (Exception ex)
