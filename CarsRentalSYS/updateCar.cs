@@ -145,6 +145,16 @@ namespace CarsRentalSYS
         {
             try
             {
+                if (txtYear.Text.Length != 4 || !int.TryParse(txtYear.Text, out _) || int.Parse(txtYear.Text) < 1900 || int.Parse(txtYear.Text) > DateTime.Now.Year)
+                {
+                    MessageBox.Show("Please enter a valid 4-digit year.");
+                    return;
+                }
+                if (string.IsNullOrEmpty(txtPrice.Text) || !int.TryParse(txtPrice.Text, out _))
+                {
+                    MessageBox.Show("Please enter a valid price.");
+                    return;
+                }
                 int year = txtYear.Text != "" ? int.Parse(txtYear.Text) : 0;
                 price = txtPrice.Text != "" ? int.Parse(txtPrice.Text) : 0;
                 OracleConnection conn = Database.OpenConnection();
@@ -182,7 +192,7 @@ namespace CarsRentalSYS
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Some field(s) are not valid. Please check the input.");
             }
             MessageBox.Show("Nothing was updated.");
         }

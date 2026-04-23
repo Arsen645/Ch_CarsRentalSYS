@@ -53,7 +53,7 @@ namespace CarsRentalSYS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading car classes: " + ex.Message);
+                MessageBox.Show("Error loading car classes");
             }
             try
             {
@@ -74,7 +74,7 @@ namespace CarsRentalSYS
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading car brands: " + ex.Message);
+                MessageBox.Show("Error loading car brands");
             }
             
 
@@ -105,7 +105,7 @@ namespace CarsRentalSYS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading car model: " + ex.Message);
+                MessageBox.Show("Error loading car model");
             }
         }
         private void cboBrand_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,12 +127,16 @@ namespace CarsRentalSYS
                 MessageBox.Show("Invalid Irish car plate format. Example: 23-KY-1234");
                 return;
             }
-            if (txtYear.Text.Length != 4 || !int.TryParse(txtYear.Text, out _) )
+            if (txtYear.Text.Length != 4 || !int.TryParse(txtYear.Text, out _) || int.Parse(txtYear.Text) < 1900 || int.Parse(txtYear.Text) > DateTime.Now.Year)
             {
                 MessageBox.Show("Please enter a valid 4-digit year.");
                 return;
             }
-            
+            if (string.IsNullOrEmpty(txtPrice.Text) || !int.TryParse(txtPrice.Text, out _))
+            {
+                MessageBox.Show("Please enter a valid price.");
+                return;
+            }
             try
             {
                 OracleConnection conn = Database.OpenConnection();
@@ -170,15 +174,16 @@ namespace CarsRentalSYS
                 }
                 else
                 {
-                    MessageBox.Show("Oracle error: " + ex.Message);
+                    MessageBox.Show("Some field(s) are not valid. Please check the input.");
                 }
             }
             catch (Exception ex)
             {
                 
                 
-                    MessageBox.Show("Database error: " + ex.Message);
-                
+                    MessageBox.Show("Some field(s) are not valid. Please check the input.");
+
+
             }
         }
 

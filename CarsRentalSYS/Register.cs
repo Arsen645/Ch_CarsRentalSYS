@@ -41,7 +41,7 @@ namespace CarsRentalSYS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error one: " + ex.Message);
+                MessageBox.Show("Some field(s) are not valid. Please check the input.");
             }
         }
 
@@ -112,12 +112,12 @@ namespace CarsRentalSYS
                 }
                 else
                 {
-                    MessageBox.Show("Oracle error: " + ex.Message);
+                    MessageBox.Show("Some field(s) are not valid. Please check the input.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error one: " + ex.Message);
+                MessageBox.Show("Some field(s) are not valid. Please check the input.");
             }
         }
 
@@ -144,7 +144,7 @@ namespace CarsRentalSYS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while retrieving customer ID: " + ex.Message);
+                MessageBox.Show("An error occurred while retrieving customer ID. Some field(s) are not valid. Please check the input. ");
             }
             return 0; // Return 0 or an appropriate default value if not found
         }

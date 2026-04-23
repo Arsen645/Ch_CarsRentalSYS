@@ -77,9 +77,9 @@ namespace CarsRentalSYS
                 return;
             }
 
-            if (txtClassDescription.Text.Any(char.IsDigit))
+            if (!txtClassDescription.Text.Any(char.IsLetter) || string.IsNullOrEmpty(txtClassDescription.Text))
             {
-                MessageBox.Show("Class description must not contain numbers");
+                MessageBox.Show("Class description must contain only letters");
                 txtClassDescription.Focus();
                 return;
             }

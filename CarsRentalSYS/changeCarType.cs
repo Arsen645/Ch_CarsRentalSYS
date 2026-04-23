@@ -71,17 +71,18 @@ namespace CarsRentalSYS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
 
-            if (txtDescription.Text.Any(char.IsDigit))
+
+            if (!txtDescription.Text.Any(char.IsLetter) || string.IsNullOrEmpty(txtDescription.Text) ||
+                txtDescription.Text.Length > 25)
             {
-                MessageBox.Show("Class description must not contain numbers");
+                MessageBox.Show("Class description must contain only between 1 and 25 letters");
                 txtDescription.Focus();
                 return;
             }
 
 
-            
+
             carclassId = carclassId = Convert.ToInt32(cmbCarClass.SelectedValue);
             description = txtDescription.Text;
             //carType = new CarType(carclassId, name, description, monthlyRate);
@@ -113,7 +114,7 @@ namespace CarsRentalSYS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Some field(s) are not valid. Please check the input.");
             }
         }
 
