@@ -28,51 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMainSearch = new System.Windows.Forms.TextBox();
             this.dtFromDate = new System.Windows.Forms.DateTimePicker();
             this.dtToDate = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.Button();
             this.grvSearchResult = new System.Windows.Forms.DataGridView();
-            this.carClassesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setCarTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeCarTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeCarTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.carsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeACarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rentalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelAReservationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.carDamageAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblPrompt = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 54);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(894, 469);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(367, 120);
+            this.label1.Location = new System.Drawing.Point(368, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 39);
             this.label1.TabIndex = 4;
@@ -80,30 +55,30 @@
             // 
             // txtMainSearch
             // 
-            this.txtMainSearch.Location = new System.Drawing.Point(101, 191);
+            this.txtMainSearch.Location = new System.Drawing.Point(231, 109);
             this.txtMainSearch.Name = "txtMainSearch";
-            this.txtMainSearch.Size = new System.Drawing.Size(292, 20);
+            this.txtMainSearch.Size = new System.Drawing.Size(249, 20);
             this.txtMainSearch.TabIndex = 6;
             // 
             // dtFromDate
             // 
-            this.dtFromDate.Location = new System.Drawing.Point(417, 191);
+            this.dtFromDate.Location = new System.Drawing.Point(534, 109);
             this.dtFromDate.Name = "dtFromDate";
-            this.dtFromDate.Size = new System.Drawing.Size(120, 20);
+            this.dtFromDate.Size = new System.Drawing.Size(96, 20);
             this.dtFromDate.TabIndex = 7;
             // 
             // dtToDate
             // 
-            this.dtToDate.Location = new System.Drawing.Point(552, 191);
+            this.dtToDate.Location = new System.Drawing.Point(686, 109);
             this.dtToDate.Name = "dtToDate";
-            this.dtToDate.Size = new System.Drawing.Size(120, 20);
+            this.dtToDate.Size = new System.Drawing.Size(106, 20);
             this.dtToDate.TabIndex = 8;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(737, 191);
+            this.btnSearch.Location = new System.Drawing.Point(818, 107);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(74, 19);
+            this.btnSearch.Size = new System.Drawing.Size(74, 23);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -112,117 +87,11 @@
             // grvSearchResult
             // 
             this.grvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvSearchResult.Location = new System.Drawing.Point(27, 236);
+            this.grvSearchResult.Location = new System.Drawing.Point(12, 150);
             this.grvSearchResult.Name = "grvSearchResult";
-            this.grvSearchResult.Size = new System.Drawing.Size(858, 262);
+            this.grvSearchResult.Size = new System.Drawing.Size(890, 348);
             this.grvSearchResult.TabIndex = 10;
             this.grvSearchResult.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSearchResult_CellContentClick);
-            // 
-            // carClassesToolStripMenuItem
-            // 
-            this.carClassesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setCarTypeToolStripMenuItem,
-            this.changeCarTypeToolStripMenuItem,
-            this.removeCarTypeToolStripMenuItem});
-            this.carClassesToolStripMenuItem.Name = "carClassesToolStripMenuItem";
-            this.carClassesToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.carClassesToolStripMenuItem.Text = "Car Classes";
-            this.carClassesToolStripMenuItem.Click += new System.EventHandler(this.carClassesToolStripMenuItem_Click);
-            // 
-            // setCarTypeToolStripMenuItem
-            // 
-            this.setCarTypeToolStripMenuItem.Name = "setCarTypeToolStripMenuItem";
-            this.setCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.setCarTypeToolStripMenuItem.Text = "Set Car Type";
-            this.setCarTypeToolStripMenuItem.Click += new System.EventHandler(this.setCarTypeToolStripMenuItem_Click);
-            // 
-            // changeCarTypeToolStripMenuItem
-            // 
-            this.changeCarTypeToolStripMenuItem.Name = "changeCarTypeToolStripMenuItem";
-            this.changeCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.changeCarTypeToolStripMenuItem.Text = "Change Car Type";
-            this.changeCarTypeToolStripMenuItem.Click += new System.EventHandler(this.changeCarTypeToolStripMenuItem_Click);
-            // 
-            // removeCarTypeToolStripMenuItem
-            // 
-            this.removeCarTypeToolStripMenuItem.Name = "removeCarTypeToolStripMenuItem";
-            this.removeCarTypeToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.removeCarTypeToolStripMenuItem.Text = "Remove Car Type";
-            this.removeCarTypeToolStripMenuItem.Click += new System.EventHandler(this.removeCarTypeToolStripMenuItem_Click);
-            // 
-            // carsToolStripMenuItem
-            // 
-            this.carsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addACarToolStripMenuItem,
-            this.removeACarToolStripMenuItem});
-            this.carsToolStripMenuItem.Name = "carsToolStripMenuItem";
-            this.carsToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.carsToolStripMenuItem.Text = "Cars";
-            // 
-            // addACarToolStripMenuItem
-            // 
-            this.addACarToolStripMenuItem.Name = "addACarToolStripMenuItem";
-            this.addACarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.addACarToolStripMenuItem.Text = "Add a car";
-            this.addACarToolStripMenuItem.Click += new System.EventHandler(this.addACarToolStripMenuItem_Click);
-            // 
-            // removeACarToolStripMenuItem
-            // 
-            this.removeACarToolStripMenuItem.Name = "removeACarToolStripMenuItem";
-            this.removeACarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.removeACarToolStripMenuItem.Text = "Cars Table";
-            this.removeACarToolStripMenuItem.Click += new System.EventHandler(this.removeACarToolStripMenuItem_Click);
-            // 
-            // rentalsToolStripMenuItem
-            // 
-            this.rentalsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cancelAReservationToolStripMenuItem1});
-            this.rentalsToolStripMenuItem.Name = "rentalsToolStripMenuItem";
-            this.rentalsToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.rentalsToolStripMenuItem.Text = "Rentals";
-            // 
-            // cancelAReservationToolStripMenuItem1
-            // 
-            this.cancelAReservationToolStripMenuItem1.Name = "cancelAReservationToolStripMenuItem1";
-            this.cancelAReservationToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
-            this.cancelAReservationToolStripMenuItem1.Text = "Show Reservations";
-            this.cancelAReservationToolStripMenuItem1.Click += new System.EventHandler(this.cancelAReservationToolStripMenuItem1_Click);
-            // 
-            // customersToolStripMenuItem
-            // 
-            this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listCustomersToolStripMenuItem});
-            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.customersToolStripMenuItem.Text = "Customers";
-            // 
-            // listCustomersToolStripMenuItem
-            // 
-            this.listCustomersToolStripMenuItem.Name = "listCustomersToolStripMenuItem";
-            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.listCustomersToolStripMenuItem.Text = "List customers";
-            this.listCustomersToolStripMenuItem.Click += new System.EventHandler(this.listCustomersToolStripMenuItem_Click);
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carDamageAnalysisToolStripMenuItem});
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.adminToolStripMenuItem.Text = "Admin";
-            // 
-            // carDamageAnalysisToolStripMenuItem
-            // 
-            this.carDamageAnalysisToolStripMenuItem.Name = "carDamageAnalysisToolStripMenuItem";
-            this.carDamageAnalysisToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.carDamageAnalysisToolStripMenuItem.Text = "Generate analysis";
-            this.carDamageAnalysisToolStripMenuItem.Click += new System.EventHandler(this.carDamageAnalysisToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // logInToolStripMenuItem
             // 
@@ -235,12 +104,6 @@
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.carClassesToolStripMenuItem,
-            this.carsToolStripMenuItem,
-            this.rentalsToolStripMenuItem,
-            this.customersToolStripMenuItem,
-            this.adminToolStripMenuItem,
-            this.exitToolStripMenuItem,
             this.logInToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -248,23 +111,55 @@
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
             // 
+            // lblPrompt
+            // 
+            this.lblPrompt.AutoSize = true;
+            this.lblPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrompt.Location = new System.Drawing.Point(12, 89);
+            this.lblPrompt.Name = "lblPrompt";
+            this.lblPrompt.Size = new System.Drawing.Size(213, 40);
+            this.lblPrompt.TabIndex = 11;
+            this.lblPrompt.Text = "Enter brand, model, \r\nyear or description of the car:";
+            this.lblPrompt.Click += new System.EventHandler(this.lblPrompt_Click);
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrom.Location = new System.Drawing.Point(486, 109);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(50, 20);
+            this.lblFrom.TabIndex = 12;
+            this.lblFrom.Text = "From:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(649, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "To:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 530);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblFrom);
+            this.Controls.Add(this.lblPrompt);
             this.Controls.Add(this.grvSearchResult);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dtToDate);
             this.Controls.Add(this.dtFromDate);
             this.Controls.Add(this.txtMainSearch);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSearchResult)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
@@ -274,29 +169,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMainSearch;
         private System.Windows.Forms.DateTimePicker dtFromDate;
         private System.Windows.Forms.DateTimePicker dtToDate;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView grvSearchResult;
-        private System.Windows.Forms.ToolStripMenuItem carClassesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setCarTypeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeCarTypeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeCarTypeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem carsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addACarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeACarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rentalsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelAReservationToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listCustomersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem carDamageAnalysisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.Label lblPrompt;
+        private System.Windows.Forms.Label lblFrom;
+        private System.Windows.Forms.Label label2;
     }
 }
 

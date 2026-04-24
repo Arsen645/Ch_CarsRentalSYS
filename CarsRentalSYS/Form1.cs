@@ -274,5 +274,10 @@ namespace CarsRentalSYS
         {
 
         }
+
+        private void lblPrompt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
