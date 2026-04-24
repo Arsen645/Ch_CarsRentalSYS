@@ -28,11 +28,11 @@ namespace CarsRentalSYS
         private void cancelReservation_Load(object sender, EventArgs e)
         {
             grdReservations.DataSource = reservations.GetAllReservations().Tables[0];
-            grdReservations.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grdReservations.SelectionMode = DataGridViewSelectionMode.FullRowSelect;    
             grdReservations.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             if (!grdReservations.Columns.Contains("btnDelete"))
             {
-                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
+                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();    //https://stackoverflow.com/questions/
                 btnDelete.HeaderText = "Delete";
                 btnDelete.Text = "Delete";
                 btnDelete.UseColumnTextForButtonValue = true;

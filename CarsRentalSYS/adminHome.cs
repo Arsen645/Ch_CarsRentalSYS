@@ -118,7 +118,7 @@ namespace CarsRentalSYS
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 grvSearchResult.DataSource = dt;
-                grvSearchResult.Columns["MODELID"].Visible = false;
+                grvSearchResult.Columns["MODELID"].Visible = false; //https://stackoverflow.com/questions/
                 grvSearchResult.Columns["brandID"].Visible = false;
             }
             catch (Exception ex)
