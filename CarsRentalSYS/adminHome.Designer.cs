@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grvSearchResult = new System.Windows.Forms.DataGridView();
             this.txtMainSearch = new System.Windows.Forms.TextBox();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.grbSideMenu.SuspendLayout();
             this.grbTable.SuspendLayout();
@@ -222,11 +223,22 @@
             this.txtMainSearch.Size = new System.Drawing.Size(234, 20);
             this.txtMainSearch.TabIndex = 11;
             // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.ForeColor = System.Drawing.Color.Red;
+            this.lblInfo.Location = new System.Drawing.Point(522, 9);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(208, 13);
+            this.lblInfo.TabIndex = 7;
+            this.lblInfo.Text = "To login as a customer press Log In button";
+            // 
             // adminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.grbTable);
             this.Controls.Add(this.grbSideMenu);
             this.Controls.Add(this.menuStrip2);
@@ -261,5 +273,6 @@
         private System.Windows.Forms.TextBox txtMainSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

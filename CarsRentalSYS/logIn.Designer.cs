@@ -35,6 +35,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPrompt = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -98,11 +99,22 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Location = new System.Drawing.Point(521, 134);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(133, 65);
+            this.lblInfo.TabIndex = 16;
+            this.lblInfo.Text = "Customer: ned@gmail.com\r\npassword: Ned1\r\n\r\nAdmin: admin@rental.com\r\npassword: adm" +
+    "in";
+            // 
             // logIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lblPrompt);
             this.Controls.Add(this.lblPassword);
@@ -126,5 +138,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPrompt;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label lblInfo;
     }
 }
