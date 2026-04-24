@@ -40,10 +40,10 @@
             this.btnCangeType = new System.Windows.Forms.Button();
             this.btnSetType = new System.Windows.Forms.Button();
             this.grbTable = new System.Windows.Forms.GroupBox();
-            this.grvSearchResult = new System.Windows.Forms.DataGridView();
-            this.txtMainSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.grvSearchResult = new System.Windows.Forms.DataGridView();
+            this.txtMainSearch = new System.Windows.Forms.TextBox();
             this.menuStrip2.SuspendLayout();
             this.grbSideMenu.SuspendLayout();
             this.grbTable.SuspendLayout();
@@ -66,6 +66,7 @@
             this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
             this.logInToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.logInToolStripMenuItem.Text = "Log In";
+            this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
             // 
             // grbSideMenu
             // 
@@ -186,21 +187,6 @@
             this.grbTable.TabIndex = 6;
             this.grbTable.TabStop = false;
             // 
-            // grvSearchResult
-            // 
-            this.grvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvSearchResult.Location = new System.Drawing.Point(6, 101);
-            this.grvSearchResult.Name = "grvSearchResult";
-            this.grvSearchResult.Size = new System.Drawing.Size(575, 292);
-            this.grvSearchResult.TabIndex = 13;
-            // 
-            // txtMainSearch
-            // 
-            this.txtMainSearch.Location = new System.Drawing.Point(221, 45);
-            this.txtMainSearch.Name = "txtMainSearch";
-            this.txtMainSearch.Size = new System.Drawing.Size(234, 20);
-            this.txtMainSearch.TabIndex = 11;
-            // 
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(471, 45);
@@ -220,6 +206,21 @@
             this.label1.Size = new System.Drawing.Size(209, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Enter any info about the car:";
+            // 
+            // grvSearchResult
+            // 
+            this.grvSearchResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvSearchResult.Location = new System.Drawing.Point(6, 101);
+            this.grvSearchResult.Name = "grvSearchResult";
+            this.grvSearchResult.Size = new System.Drawing.Size(575, 292);
+            this.grvSearchResult.TabIndex = 13;
+            // 
+            // txtMainSearch
+            // 
+            this.txtMainSearch.Location = new System.Drawing.Point(221, 45);
+            this.txtMainSearch.Name = "txtMainSearch";
+            this.txtMainSearch.Size = new System.Drawing.Size(234, 20);
+            this.txtMainSearch.TabIndex = 11;
             // 
             // adminHome
             // 

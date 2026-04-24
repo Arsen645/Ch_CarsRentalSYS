@@ -120,11 +120,16 @@ namespace CarsRentalSYS
         private void btnSearch_Click(object sender, EventArgs e)
         {
             
-            startDate = dtFromDate.Value;
-            finishDate = dtToDate.Value;
+            startDate = dtFromDate.Value.Date;
+            finishDate = dtToDate.Value.Date;
             if (!(startDate <= finishDate))
             {
                 MessageBox.Show("Finish date must be after start date");
+                return;
+            }
+            if(startDate.Date < DateTime.Now.Date || finishDate.Date < DateTime.Now.Date)
+            {
+                MessageBox.Show("Dates cannot be in the past");
                 return;
             }
             try { 
